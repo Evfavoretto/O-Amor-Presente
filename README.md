@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -25,11 +26,11 @@
       position:relative;
       overflow:hidden;
     }
-    header .container{position:relative;z-index:2}
+    header .container{position:relative;z-index:2;text-align:center}
     .badge{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 12px;border-radius:999px;font-size:14px;margin-bottom:14px}
     h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:8px 0 10px}
-    .subtitle{font-size:clamp(16px,2.8vw,22px);opacity:.95;max-width:780px}
-    .cta-wrap{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .subtitle{font-size:clamp(16px,2.8vw,22px);opacity:.95;max-width:780px;margin:0 auto}
+    .cta-wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:28px}
     .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:600;transition:.2s ease;box-shadow:0 6px 14px rgba(0,0,0,.12)}
     .btn-primary{background:#fff;color:var(--rose)}
     .btn-primary:hover{transform:translateY(-1px)}
@@ -37,7 +38,7 @@
     .btn-outline:hover{background:rgba(255,255,255,.12)}
     section{padding:56px 0;border-bottom:1px solid #f1f5f9}
     .grid{display:grid;gap:22px}
-    .two{grid-template-columns:1fr; }
+    .two{grid-template-columns:1fr}
     @media(min-width:860px){ .two{grid-template-columns:1fr 1fr} }
     h2{font-size:clamp(22px,3.6vw,30px);margin:0 0 16px}
     p{margin:10px 0 0;font-size:18px;color:var(--soft)}
@@ -64,6 +65,17 @@
       transform:rotate(18deg);
       opacity:.85;
     }
+    /* Depoimentos */
+    .testimonials{display:grid;gap:18px}
+    @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
+    .t-card{display:flex;gap:12px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;
+      box-shadow:0 8px 24px rgba(31,35,48,.05)}
+    .t-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #f1f5f9}
+    .t-name{font-weight:800;margin:0;font-size:15px}
+    .t-text{margin:4px 0 0;color:var(--ink);font-size:17px;line-height:1.45}
+    /* Instrutores */
+    .mentores{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .mentores img{max-width:320px;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
   </style>
 </head>
 <body>
@@ -128,6 +140,15 @@
       </div>
     </section>
 
+    <section id="instrutores">
+      <h2>Instrutores</h2>
+      <div class="mentores">
+        <img src="imgs/evandro-alinne.jpg" alt="Evandro e Alinne — Mentores da Vivência O Amor Presente" />
+        <p><strong>Evandro & Alinne</strong> são os mentores e facilitadores desta vivência.  
+        Com vasta experiência em desenvolvimento humano, constelação familiar e empresarial, numerologia caldeia e inteligência emocional, eles criaram esse encontro para proporcionar reconexão, clareza e fortalecimento dos vínculos amorosos.</p>
+      </div>
+    </section>
+
     <section id="precos">
       <h2>Investimento (por casal)</h2>
       <div class="pricing">
@@ -151,8 +172,17 @@
 
     <section id="depoimentos">
       <h2>Depoimentos</h2>
-      <div class="card">
-        <p>“É simples, a gente é que complica. Problemas todos os casais têm, mas com ajuda fica muito mais fácil e mais leve.”</p>
+      <div class="testimonials">
+        <div class="t-card"><img class="t-avatar" src="imgs/grasiela.jpg"><div><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro e sempre levar em consideração ambas as colocações...</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/mateus.jpg"><div><p class="t-name">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento, as linguagens do amor e a importância de saber ouvir e se apoiar.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/marcelo.jpg"><div><p class="t-name">Marcelo Pissaia Novo</p><p class="t-text">Hoje percebi que devemos olhar para a pessoa que está ao nosso lado com amor e respeito, devemos nos apoiar nos momentos difíceis e nunca largar a mão.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/alini.jpg"><div><p class="t-name">Alini De Paris</p><p class="t-text">Hoje valeu a pena porque a comunicação clara e expressiva em um relacionamento é muito importante...</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/jean.jpg"><div><p class="t-name">Jean Camargo</p><p class="t-text">Hoje percebi que devemos cultivar amor próprio primordialmente para depois oferecer na relação, estar em sintonia na comunicação e cultivar boas raízes.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/valdemar.jpg"><div><p class="t-name">Valdemar & Ivete</p><p class="t-text">Valeu a pena porque senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/joice.jpg"><div><p class="t-name">Joice</p><p class="t-text">A vivência de hoje foi mais uma vez, uma experiência única que superou as expectativas. Precisamos cuidar do nosso casamento para viver de maneira leve e feliz.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/ivete.jpg"><div><p class="t-name">Ivete</p><p class="t-text">Hoje percebi que valeu a pena o encontro de casal para entender um ao outro, apoiar sempre, tirar as dores e cuidar das nossas raízes.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/roselei.jpg"><div><p class="t-name">Roselei Teles</p><p class="t-text">Hoje percebi que um relacionamento saudável é baseado em confiança, compreensão das dores e respeito ao momento de cada um.</p></div></div>
+        <div class="t-card"><img class="t-avatar" src="imgs/claudete.jpg"><div><p class="t-name">Claudete</p><p class="t-text">Valeu a pena pois percebi o quanto é importante a confiança e o compartilhamento de sonhos e projetos com o parceiro...</p></div></div>
       </div>
     </section>
 
