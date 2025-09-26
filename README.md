@@ -43,12 +43,12 @@
       overflow:hidden !important;
     }
 
-    /* FAIXA ROSA DE TOPO */
+    /* FAIXA ROSA DE TOPO (cobrindo desde o início) */
     .top-bar{
       background:var(--rose);
       color:#fff;
       text-align:center;
-      padding:18px 10px;
+      padding:28px 10px;           /* mais alta para garantir cobertura */
       font-weight:900;
       font-size:clamp(20px,4.6vw,30px);
       letter-spacing:.04em;
@@ -447,7 +447,7 @@
     <svg viewBox="0 0 24 24"><path d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
   </a>
 
-  <!-- JS do FAQ + REMOÇÃO AGRESSIVA DO HEADER DO GITHUB -->
+  <!-- JS do FAQ + LIMPEZA AGRESSIVA COM INTERVALO -->
   <script>
     (function(){
       // FAQ: abre um por vez
@@ -471,7 +471,7 @@
         });
       });
 
-      // REMOÇÃO AGRESSIVA de header/título do GitHub Pages
+      // Função de remoção
       const killSelectors = [
         'body > header',
         '.page-header',
@@ -484,25 +484,35 @@
         'h1.project-name',
         'h1.site-title'
       ];
-      killSelectors.forEach(sel => {
-        document.querySelectorAll(sel).forEach(el => el && el.remove());
-      });
-
-      // Se ainda sobrar um H1 solto no topo antes da nossa faixa, remove
-      const bodyChildren = Array.from(document.body.children);
-      for(let i=0;i<bodyChildren.length;i++){
-        const el = bodyChildren[i];
-        if(el.classList && el.classList.contains('top-bar')) break;
-        if(el.tagName === 'H1') { el.remove(); break; }
+      function nukeHeaders(){
+        killSelectors.forEach(sel => {
+          document.querySelectorAll(sel).forEach(el => el && el.remove());
+        });
+        // Remove H1 antes da faixa
+        const bodyChildren = Array.from(document.body.children);
+        for(let i=0;i<bodyChildren.length;i++){
+          const el = bodyChildren[i];
+          if(el.classList && el.classList.contains('top-bar')) break;
+          if(el.tagName === 'H1') { el.remove(); break; }
+        }
+        // Remove H1 com textos suspeitos
+        document.querySelectorAll('h1').forEach(h=>{
+          const t = (h.textContent || '').trim().toLowerCase();
+          if(t === 'o amor presente' || t === 'amor presente'){
+            h.remove();
+          }
+        });
       }
 
-      // Também remove H1 com texto igual ao nome do repo (por segurança)
-      document.querySelectorAll('h1').forEach(h=>{
-        const t = (h.textContent || '').trim().toLowerCase();
-        if(t === 'o amor presente' || t === 'amor presente'){
-          h.remove();
-        }
-      });
+      // 1) Executa já
+      nukeHeaders();
+      // 2) Executa repetidamente por ~5s (a cada 300ms, 16 vezes)
+      let runs = 0;
+      const iv = setInterval(() => {
+        nukeHeaders();
+        runs++;
+        if(runs >= 16) clearInterval(iv);
+      }, 300);
     })();
   </script>
 </body>
