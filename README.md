@@ -5,14 +5,6 @@
   <title>Vivência de Casais – O Amor Presente</title>
   <meta name="description" content="Vivência de Casais O Amor Presente — um dia inteiro para reconectar, comunicar, ressignificar e fortalecer o compromisso consciente." />
   <style>
-    /* Forçar remoção do título azul padrão do GitHub Pages */
-    header .project-name,
-    header .site-title,
-    h1.project-name,
-    h1.site-title {
-      display: none !important;
-    }
-
     :root{
       --rose:#C9376E;
       --rose-2:#fce9f0;
@@ -26,19 +18,19 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
     a{color:var(--rose);text-decoration:none}
+
     .container{max-width:1100px;margin:0 auto;padding:24px}
 
-    /* Header */
+    /* Faixa Rosa cobrindo tudo no topo */
     header{
-      background:linear-gradient(135deg,var(--rose) 0%, var(--blue) 100%);
+      background:var(--rose);
       color:#fff;
-      padding:100px 0 72px;
+      padding:140px 0 80px; /* aumentamos bastante para cobrir o título azul */
       text-align:center;
       position:relative;
       overflow:hidden;
     }
-    header .container{position:relative;z-index:2}
-    .logo{max-width:280px;margin-bottom:20px}
+    .logo{max-width:300px;margin-bottom:20px}
     .badge{
       display:inline-block;
       background:rgba(255,255,255,.15);
@@ -48,7 +40,7 @@
       padding:8px 14px;
       border-radius:999px;
       font-size:15px;
-      margin-bottom:16px;
+      margin-top:16px;
       font-weight:600;
     }
     .subtitle{font-size:clamp(16px,2.8vw,22px);opacity:.95;max-width:780px;margin:0 auto}
@@ -149,84 +141,4 @@
 
   <main class="container">
 
-    <section id="sobre" style="background:var(--rose-2);border-radius:12px;padding:40px;margin-top:30px">
-      <h2 style="background: linear-gradient(90deg, var(--rose), var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px">O que é a vivência?</h2>
-      <p>Mais que um encontro: um dia imersivo para casais mergulharem em experiências que abrem espaço para diálogo, afeto, perdão e sonho compartilhado. Aqui, vocês vão se olhar de novo, se ouvir de verdade e reencontrar o amor como escolha diária.</p>
-    </section>
-
-    <section id="resultados" style="margin-top:40px">
-      <h2 style="background: linear-gradient(90deg, var(--blue), var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px">Resultados</h2>
-      <ul class="list-check">
-        <li><strong>Reconexão emocional e leveza</strong></li>
-        <li><strong>Comunicação respeitosa e clara</strong></li>
-        <li><strong>Ressignificação de feridas e aprendizados</strong></li>
-        <li><strong>Compromisso consciente no dia a dia</strong></li>
-      </ul>
-    </section>
-
-    <section id="precos">
-      <h2>Investimento (por casal)</h2>
-      <div class="pricing">
-        <div class="price-card">
-          <div class="pill">1º Lote</div>
-          <div class="price">R$ 620,00</div>
-          <p class="muted">Vagas limitadas</p>
-        </div>
-        <div class="price-card">
-          <div class="pill">2º Lote</div>
-          <div class="price">R$ 800,00</div>
-          <p class="muted">Sujeito à disponibilidade</p>
-        </div>
-        <div class="price-card">
-          <div class="pill">3º Lote</div>
-          <div class="price">R$ 998,00</div>
-          <p class="muted">Últimas vagas</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="depoimentos" style="background:var(--blue-light);border-radius:12px;padding:40px;margin-top:40px">
-      <h2>Depoimentos</h2>
-      <div class="testimonials">
-        <div class="t-card"><p class="t-name" style="color:var(--rose)">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro...</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--blue)">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento, as linguagens do amor...</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--rose)">Alini De Paris</p><p class="t-text">Hoje valeu a pena porque a comunicação clara e expressiva em um relacionamento é muito importante...</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--blue)">Marcelo Pissaia Novo</p><p class="t-text">Hoje percebi que devemos olhar para a pessoa que está ao nosso lado com amor e respeito...</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--rose)">Joice</p><p class="t-text">A vivência de hoje foi mais uma vez, uma experiência única que superou as expectativas...</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--blue)">Valdemar & Ivete</p><p class="t-text">Valeu a pena porque senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--rose)">Ivete</p><p class="t-text">Hoje percebi que valeu a pena o encontro de casal para entender um ao outro, apoiar sempre, tirar as dores e cuidar das nossas raízes.</p></div>
-        <div class="t-card"><p class="t-name" style="color:var(--blue)">Jean Camargo</p><p class="t-text">Hoje percebi que devemos cultivar amor próprio primordialmente para depois oferecer na relação...</p></div>
-      </div>
-    </section>
-
-    <section id="inscricao" style="text-align:center;margin:50px 0">
-      <h2>Garanta sua vaga</h2>
-      <p>As vagas são limitadas. Clique no botão abaixo para iniciar sua inscrição.</p>
-      <div class="cta-wrap">
-        <a class="btn btn-primary" href="#" title="Link do formulário/checkout">Quero Participar</a>
-        <a class="btn" style="background:var(--blue-light);color:var(--blue)" href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" target="_blank" rel="noopener">Falar no WhatsApp</a>
-      </div>
-    </section>
-
-    <section>
-      <div class="footer-cta">
-        <div>
-          <div class="kicker">Pronto para reconectar?</div>
-          <h3 style="margin:6px 0 0">Um dia para lembrar, sentir e escolher novamente o amor.</h3>
-        </div>
-        <a href="#inscricao" class="btn btn-primary">Inscrever-se agora</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© O Amor Presente — Vivência de Casais. Todos os direitos reservados.</p>
-  </footer>
-
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" class="whatsapp-float" target="_blank" rel="noopener">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-</body>
-</html>
+    <section id="sobre" style="background:var(--rose-2);borde
