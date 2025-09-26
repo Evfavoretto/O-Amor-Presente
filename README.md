@@ -20,14 +20,16 @@
     header {
       background:var(--rose);
       text-align:center;
-      padding:24px;
+      padding:36px 24px;
       color:#fff;
+      position:relative;
     }
 
     header img.logo {
-      max-height:120px; /* ajuste para logo mais retangular */
+      max-height:180px; /* aumentada para cobrir escrita azul do GitHub */
       width:auto;
-      margin-bottom:12px;
+      display:block;
+      margin:0 auto 12px;
     }
 
     header .badge {
@@ -103,7 +105,7 @@
 <body>
 
   <header>
-    <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
+    <img src="logo.png" alt="Logo O Amor Presente" class="logo">
     <div class="badge">Vivência de Casais</div>
   </header>
 
@@ -187,4 +189,3 @@
 
 </body>
 </html>
-
