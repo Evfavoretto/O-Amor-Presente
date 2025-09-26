@@ -111,8 +111,8 @@
       border:1px solid var(--line);border-radius:18px;padding:22px;
       box-shadow:0 10px 26px rgba(0,0,0,.05)
     }
-    .fit-yes{background:#ECFDF5}
-    .fit-no{background:#FFE4EA}
+    .fit-yes{background:#ECFDF5}            /* verde bem claro */
+    .fit-no{background:#FFE4EA}             /* rosa claro de alerta */
     .fit-title{
       margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px);
       display:flex;gap:10px;align-items:center;color:var(--ink)
@@ -224,7 +224,7 @@
         <!-- CTA primária -->
         <div class="cta">
           <a href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn ghost" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform" class="btn primary" target="_blank" rel="noopener">Quero participar</a>
+          <a href="#inscricao" class="btn primary">Quero participar</a>
         </div>
       </div>
     </div>
@@ -294,7 +294,7 @@
     </div>
   </section>
 
-  <!-- FAQ (pergunta rosa, resposta azul, abre 1 por vez) -->
+  <!-- FAQ (pergunta rosa, resposta azul) -->
   <section id="faq">
     <div class="wrap">
       <h2 class="section-title">Perguntas Frequentes</h2>
@@ -302,98 +302,109 @@
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Para quem é a vivência?</span><span class="mark">+</span>
+            <span>Para quem é a vivência?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Precisa expor a vida do casal no grupo?</span><span class="mark">+</span>
+            <span>Precisa expor a vida do casal no grupo?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>O que acontece durante o dia?</span><span class="mark">+</span>
+            <span>O que acontece durante o dia?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Há pré-requisito para participar?</span><span class="mark">+</span>
+            <span>Há pré-requisito para participar?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>O investimento é por pessoa ou por casal?</span><span class="mark">+</span>
+            <span>O investimento é por pessoa ou por casal?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Qual é o horário e a duração?</span><span class="mark">+</span>
+            <span>Qual é o horário e a duração?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>O que levar no dia?</span><span class="mark">+</span>
+            <span>O que levar no dia?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.
+            </div>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">
-            <span>Como faço para garantir a vaga?</span><span class="mark">+</span>
+            <span>Como faço para garantir a vaga?</span>
+            <span class="mark">+</span>
           </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.
-          </div></div>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- INSCRIÇÃO (abre o Forms em nova guia) -->
+  <!-- INSCRIÇÃO -->
   <section id="inscricao" style="padding:40px 20px">
-    <div class="wrap" style="max-width:780px;text-align:center">
-      <h2 class="section-title">Inscrição</h2>
-      <p style="margin:0 0 16px;color:var(--soft)">
-        Clique no botão abaixo para abrir o formulário de inscrição em uma nova página.
-      </p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform"
-         class="btn primary" target="_blank" rel="noopener">
-         Abrir formulário de inscrição
-      </a>
-
-      <div style="margin-top:16px">
-        <a href="https://wa.me/5549998110445?text=Enviei%20o%20formul%C3%A1rio%20da%20Viv%C3%AAncia%20O%20Amor%20Presente"
-           class="btn ghost" target="_blank" rel="noopener">
-           Avisei no WhatsApp
-        </a>
-      </div>
+    <div class="wrap" style="text-align:center">
+      <p style="margin:0 0 12px;color:var(--soft)">Vagas limitadas • 08h às 17h • <em>Data & Local a confirmar</em></p>
+      <a href="https://wa.me/5549998110445?text=Quero%20garantir%20minha%20vaga%20na%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn primary" target="_blank" rel="noopener">Garantir minha vaga</a>
     </div>
   </section>
 
@@ -405,7 +416,7 @@
           <div style="font-weight:800;color:var(--rose);letter-spacing:.06em;text-transform:uppercase;font-size:12px">Pronto para reconectar?</div>
           <h3 style="margin:6px 0 0;font-size:22px;color:var(--ink)">Um dia para lembrar, sentir e escolher novamente o amor.</h3>
         </div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform" class="btn primary" target="_blank" rel="noopener">Inscrever-se agora</a>
+        <a href="#inscricao" class="btn primary">Inscrever-se agora</a>
       </div>
     </div>
   </section>
@@ -446,5 +457,6 @@
       });
     })();
   </script>
+
 </body>
 </html>
