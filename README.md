@@ -65,7 +65,7 @@
   .two{grid-template-columns:1fr}
   @media(min-width:860px){ .two{grid-template-columns:1fr 1fr} }
 
-  /* Títulos principais em degradê */
+  /* Títulos com degradê */
   .grad-h2{
     font-size:clamp(36px,4.6vw,54px);
     line-height:1.12; margin:0 0 12px; font-weight:900;
@@ -73,11 +73,6 @@
     -webkit-background-clip:text; background-clip:text; color:transparent;
     text-align:left;
   }
-  /* Destaque ainda maior para "O que é?" */
-  .grad-h2.big{
-    font-size:clamp(42px,5vw,64px);
-  }
-
   .section-title{
     font-size:clamp(34px,4.2vw,50px);
     font-weight:900;
@@ -96,6 +91,18 @@
   .list-check li{list-style:none;padding-left:28px;position:relative}
   .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:900}
 
+  /* BLOCO “O que é a vivência?” */
+  .oque-section{background:var(--rose-10);border-radius:18px;padding:34px 24px}
+  .oque-title{
+    font-size:clamp(42px,5vw,64px); /* maior que os demais */
+    font-weight:900;
+    margin:0 0 12px;
+    background:linear-gradient(90deg,var(--rose),var(--blue));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-align:left;
+  }
+  .oque-text{font-size:20px;color:var(--ink);max-width:820px}
+
   /* Mentores */
   .mentores{display:flex;gap:16px;align-items:center;justify-content:center;margin:16px auto 0;text-align:center}
   .mentores img{width:120px;height:120px;object-fit:cover;border-radius:16px;border:2px solid var(--line)}
@@ -104,7 +111,7 @@
   /* Pricing */
   .pricing{display:grid;gap:18px}
   @media(min-width:860px){ .pricing{grid-template-columns:repeat(3,1fr)} }
-  .price-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 10px 28px rgba(31,35,48,.05)}
+  .price-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.05)}
   .price-card .pill{background:var(--rose-10);color:var(--rose)}
   .price{font-size:42px;font-weight:900;color:var(--rose);margin:10px 0}
   .muted{color:#94a3b8}
@@ -128,7 +135,7 @@
   .primary:hover{filter:brightness(1.05)}
   .ghost:hover{background:var(--blue);color:#fff}
 
-  /* Botão flutuante WhatsApp */
+  /* WhatsApp flutuante (mais à esquerda) */
   .whats-float{
     position:fixed; right:80px; top:50%; transform:translateY(-50%); z-index:1000;
     width:60px; height:60px; border-radius:50%;
@@ -155,15 +162,21 @@
   <div class="wrap">
     <div class="hero-card">
       <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
-      <p class="lead"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — um dia para olhar, ouvir e reescolher o vínculo com presença.</p>
+      <p class="lead"><strong>“Reconectar: A Linguagem do Amor em Movimento”.</strong></p>
       <div class="divider"></div>
 
+      <!-- Bloco O que é + Resultados -->
       <div class="grid two">
-        <div class="card">
+        <div class="card oque-section">
           <span class="pill">O que é?</span>
-          <h2 class="grad-h2 big">Essência da vivência</h2>
-          <p>Um encontro acolhedor, com dinâmicas simples e conversa sincera, para cuidar do que sustenta o amor: presença, respeito e verdade.</p>
+          <h2 class="oque-title">O que é a vivência?</h2>
+          <p class="oque-text">
+            Mais que um encontro: um <strong>dia imersivo</strong> para casais mergulharem em experiências que abrem espaço
+            para <strong>diálogo, afeto, perdão</strong> e <strong>sonho compartilhado</strong>. Aqui, vocês vão se olhar de novo,
+            se ouvir de verdade e reencontrar o amor como escolha diária.
+          </p>
         </div>
+
         <div class="card">
           <span class="pill">Resultados</span>
           <h2 class="grad-h2">O que vocês levam</h2>
@@ -201,21 +214,21 @@
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- DEPOIMENTOS (F, M, F, M, F, M, F, M, F, F) -->
 <section id="depoimentos">
   <div class="wrap">
     <h2 class="section-title">Depoimentos</h2>
     <div class="testimonials">
-      <div class="t-card t-f"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal...</p></div>
-      <div class="t-card t-m"><p class="t-name">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento...</p></div>
-      <div class="t-card t-f"><p class="t-name">Alini De Paris</p><p class="t-text">A comunicação clara e expressiva cria um ambiente seguro...</p></div>
-      <div class="t-card t-m"><p class="t-name">Jean Camargo</p><p class="t-text">Percebi que precisamos cultivar amor próprio para depois oferecer na relação...</p></div>
-      <div class="t-card t-f"><p class="t-name">Joice</p><p class="t-text">Uma experiência única que superou as expectativas...</p></div>
-      <div class="t-card t-m"><p class="t-name">Marcelo Pissaia Novo</p><p class="t-text">Devemos olhar para quem está ao nosso lado com amor e respeito...</p></div>
-      <div class="t-card t-f"><p class="t-name">Ivete</p><p class="t-text">Valeu a pena o encontro de casal para entender um ao outro...</p></div>
-      <div class="t-card t-m"><p class="t-name">Valdemar</p><p class="t-text">Senti a necessidade de buscar mais apoio quando o casal está com dores...</p></div>
-      <div class="t-card t-f"><p class="t-name">Roselei Teles</p><p class="t-text">Um relacionamento saudável é baseado em confiança...</p></div>
-      <div class="t-card t-f"><p class="t-name">Claudete</p><p class="t-text">Importante a confiança e o compartilhamento de sonhos...</p></div>
+      <div class="t-card t-f"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro e sempre levar em consideração ambas as colocações. Em sintonia podemos crescer e evoluir muito mais.</p></div>
+      <div class="t-card t-m"><p class="t-name">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento, as linguagens do amor e a importância de saber ouvir e se apoiar.</p></div>
+      <div class="t-card t-f"><p class="t-name">Alini De Paris</p><p class="t-text">A comunicação clara e expressiva, respeitando o tempo e a individualidade do outro, cria um ambiente mais seguro e acolhedor, fortalecendo nossa conexão emocional.</p></div>
+      <div class="t-card t-m"><p class="t-name">Jean Camargo</p><p class="t-text">Percebi que precisamos cultivar amor próprio para depois oferecer na relação, em sintonia na comunicação e escutando com amor — cultivando boas raízes.</p></div>
+      <div class="t-card t-f"><p class="t-name">Joice</p><p class="t-text">Uma experiência única que superou as expectativas. Precisamos cuidar do nosso casamento para vivermos de maneira leve e feliz.</p></div>
+      <div class="t-card t-m"><p class="t-name">Marcelo Pissaia Novo</p><p class="t-text">Devemos olhar para quem está ao nosso lado com amor e respeito, nos apoiar nos momentos difíceis e nunca largar a mão.</p></div>
+      <div class="t-card t-f"><p class="t-name">Ivete</p><p class="t-text">Valeu a pena o encontro de casal para entender um ao outro, apoiar sempre, tirar as dores e cuidar das nossas raízes.</p></div>
+      <div class="t-card t-m"><p class="t-name">Valdemar</p><p class="t-text">Senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div>
+      <div class="t-card t-f"><p class="t-name">Roselei Teles</p><p class="t-text">Um relacionamento saudável é baseado em confiança, em si mesma e no outro; compreender as dores e respeitar o momento de cada um.</p></div>
+      <div class="t-card t-f"><p class="t-name">Claudete</p><p class="t-text">Importante a confiança e o compartilhamento de sonhos e projetos. Condução e responsabilidade caminham juntas.</p></div>
     </div>
   </div>
 </section>
