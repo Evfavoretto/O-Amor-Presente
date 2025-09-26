@@ -1,3 +1,4 @@
+
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
@@ -8,10 +9,11 @@
     :root{
       --rose:#C9376E;
       --rose-2:#fce9f0;
+      --blue:#4DA6FF;
+      --blue-light:#e6f3ff;
       --ink:#1f2330;
       --soft:#6b7280;
       --bg:#fff;
-      --accent:#7C3AED;
       --success:#10B981;
     }
     *{box-sizing:border-box}
@@ -19,12 +21,12 @@
     a{color:var(--rose);text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{
-      background:linear-gradient(135deg,var(--rose) 0%, #d86c94 50%, #f1a1c1 100%);
+      background:linear-gradient(135deg,var(--rose) 0%, var(--blue) 100%);
       color:#fff;
       padding:56px 0 72px;
+      text-align:center;
       position:relative;
       overflow:hidden;
-      text-align:center;
     }
     header .container{position:relative;z-index:2}
     .badge{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:8px 12px;border-radius:999px;font-size:14px;margin-bottom:14px}
@@ -48,23 +50,17 @@
       background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;
       box-shadow:0 8px 24px rgba(31,35,48,.06);
     }
-    .pill{display:inline-block;background:var(--rose-2);color:var(--rose);padding:4px 10px;border-radius:999px;font-weight:600;font-size:12px;margin-bottom:8px}
+    .pill{display:inline-block;background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:999px;font-weight:600;font-size:12px;margin-bottom:8px}
     .pricing{display:grid;grid-template-columns:1fr;gap:16px}
     @media(min-width:860px){ .pricing{grid-template-columns:repeat(3,1fr)} }
     .price-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;text-align:center}
     .price{font-size:34px;font-weight:800;color:var(--rose);margin:8px 0}
     .muted{color:#64748b}
-    .footer-cta{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .footer-cta{background:var(--blue-light);border:1px solid #dbeafe;border-radius:16px;padding:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
     footer{padding:40px 0;color:#94a3b8;font-size:14px}
     .kicker{font-weight:700;color:var(--rose);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
     .list-check li{list-style:none;padding-left:28px;position:relative}
     .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:800}
-    .hero-bg{
-      position:absolute;inset:-120px -80px auto auto;width:520px;height:520px;border-radius:50%;
-      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), rgba(255,255,255,.12) 60%, rgba(255,255,255,0));
-      transform:rotate(18deg);
-      opacity:.85;
-    }
     /* Depoimentos */
     .testimonials{display:grid;gap:18px}
     @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
@@ -80,10 +76,9 @@
 </head>
 <body>
   <header>
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container">
       <!-- Logo no topo -->
-      <img src="imgs/logo.jpg" alt="Logo O Amor Presente" class="logo">
+      <img src="logo.jpg" alt="Logo O Amor Presente" class="logo">
       <span class="badge">Vivência de Casais</span>
       <h1>O Amor Presente</h1>
       <p class="subtitle"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — uma jornada para reconectar emoções, renovar o vínculo e despertar a verdadeira parceria.</p>
@@ -116,7 +111,7 @@
       </div>
     </section>
 
-    <section id="publico">
+    <section id="publico" style="background:var(--blue-light)">
       <h2>Para quem é?</h2>
       <p>Casais — namorados, noivos, casados ou em processo de restauração — que desejam reacender a chama, superar distâncias, fortalecer a parceria e viver um tempo só para o casal, longe das pressões externas.</p>
     </section>
@@ -142,10 +137,10 @@
       </div>
     </section>
 
-    <section id="instrutores">
+    <section id="instrutores" style="background:var(--blue-light)">
       <h2>Instrutores</h2>
       <div class="mentores">
-        <img src="imgs/evandro-alinne.jpg" alt="Evandro e Alinne — Mentores da Vivência O Amor Presente" />
+        <img src="evandro-alinne.jpg" alt="Evandro e Alinne — Mentores da Vivência O Amor Presente" />
         <p><strong>Evandro & Alinne</strong> são os mentores e facilitadores desta vivência.  
         Com experiência em desenvolvimento humano, constelação familiar e empresarial, numerologia caldeia e inteligência emocional, criaram este encontro para promover reconexão, clareza e fortalecimento dos vínculos amorosos.</p>
       </div>
@@ -172,7 +167,7 @@
       </div>
     </section>
 
-    <section id="depoimentos">
+    <section id="depoimentos" style="background:var(--blue-light)">
       <h2>Depoimentos</h2>
       <div class="testimonials">
         <div class="t-card"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro e sempre levar em consideração ambas as colocações...</p></div>
@@ -193,7 +188,7 @@
       <p>As vagas são limitadas. Clique no botão abaixo para iniciar sua inscrição.</p>
       <div class="cta-wrap">
         <a class="btn btn-primary" href="#" title="Link do formulário/checkout">Quero Participar</a>
-        <a class="btn" style="background:var(--rose-2);color:var(--rose)" href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn" style="background:var(--blue-light);color:var(--blue)" href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </section>
 
