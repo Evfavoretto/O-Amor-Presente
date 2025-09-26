@@ -33,25 +33,24 @@
 
   .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
+  /* Faixa rosa topo */
+  .top-bar{
+    background:var(--rose);
+    color:#fff;
+    text-align:center;
+    padding:14px 0;
+    font-weight:900;
+    font-size:clamp(22px,5vw,34px);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+
   /* HERO */
   .hero{padding:28px 0 12px;background:linear-gradient(135deg, rgba(201,55,110,.06), rgba(67,165,255,.06))}
   .hero-card{
     background:#fff;border:1px solid var(--line);border-radius:22px;
     padding:28px 28px 34px;margin:0 auto;max-width:980px;
     box-shadow:0 14px 34px rgba(0,0,0,.06);text-align:center
-  }
-
-  /* Degradê rosa→azul */
-  .grad-title{
-    font-weight:900;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    font-size:clamp(28px,6vw,56px);
-    margin:0 0 10px;
-    background:linear-gradient(90deg,var(--rose),var(--blue));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
   }
 
   /* Logo maior */
@@ -127,16 +126,15 @@
 
   /* Botão flutuante WhatsApp */
   .whats-float{
-    position:fixed; right:18px; top:50%; transform:translateY(-50%); z-index:1000;
+    position:fixed; right:80px; top:50%; transform:translateY(-50%); z-index:1000;
     width:60px; height:60px; border-radius:50%;
     background:linear-gradient(135deg,#25D366,#1EBE57);
     box-shadow:0 12px 28px rgba(0,0,0,.18);
     display:flex; align-items:center; justify-content:center;
   }
   .whats-float svg{width:30px; height:30px; fill:#fff}
-  .whats-float:active{transform:translateY(-50%) scale(.98)}
   @media (max-width:640px){
-    .whats-float{top:auto; bottom:18px; transform:none;}
+    .whats-float{top:auto; bottom:18px; right:18px; transform:none;}
   }
 
   /* Rodapé rosa */
@@ -145,13 +143,14 @@
 </head>
 <body>
 
+<!-- Faixa rosa topo -->
+<div class="top-bar">Vivência de Casais</div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="wrap">
     <div class="hero-card">
-      <div class="grad-title">Vivência de Casais</div>
       <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
-
       <p class="lead"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — um dia para olhar, ouvir e reescolher o vínculo com presença.</p>
       <div class="divider"></div>
 
@@ -191,21 +190,9 @@
   <div class="wrap">
     <h2 class="section-title">Investimento (por casal)</h2>
     <div class="pricing">
-      <div class="price-card">
-        <div class="pill">1º Lote</div>
-        <div class="price">R$ 620,00</div>
-        <p class="muted">Vagas limitadas</p>
-      </div>
-      <div class="price-card">
-        <div class="pill">2º Lote</div>
-        <div class="price">R$ 800,00</div>
-        <p class="muted">Sujeito à disponibilidade</p>
-      </div>
-      <div class="price-card">
-        <div class="pill">3º Lote</div>
-        <div class="price">R$ 998,00</div>
-        <p class="muted">Últimas vagas</p>
-      </div>
+      <div class="price-card"><div class="pill">1º Lote</div><div class="price">R$ 620,00</div><p class="muted">Vagas limitadas</p></div>
+      <div class="price-card"><div class="pill">2º Lote</div><div class="price">R$ 800,00</div><p class="muted">Sujeito à disponibilidade</p></div>
+      <div class="price-card"><div class="pill">3º Lote</div><div class="price">R$ 998,00</div><p class="muted">Últimas vagas</p></div>
     </div>
   </div>
 </section>
