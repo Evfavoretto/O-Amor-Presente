@@ -15,7 +15,6 @@
       --line:#E9EEF5;
       --bg:#FFFFFF;
       --success:#10B981;
-      --warn:#E11D48;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
@@ -25,17 +24,11 @@
 
     /* FAIXA ROSA DE TOPO (apenas o texto) */
     .top-bar{
-      background:var(--rose);
-      color:#fff;
-      text-align:center;
-      padding:14px 10px;
-      font-weight:900;
-      font-size:clamp(20px,4.6vw,30px);
-      letter-spacing:.04em;
-      text-transform:uppercase;
+      background:var(--rose); color:#fff; text-align:center; padding:14px 10px;
+      font-weight:900; font-size:clamp(20px,4.6vw,30px); letter-spacing:.04em; text-transform:uppercase;
     }
 
-    /* HERO COM CARTÃO BRANCO ABAIXO DA FAIXA */
+    /* HERO */
     .hero{padding:28px 20px 10px;background:#fff}
     .wrap{max-width:1100px;margin:0 auto}
     .hero-card{
@@ -104,27 +97,13 @@
     .woman{background:var(--rose-2);border-color:#F9C9DA}
     .man{background:var(--blue-2);border-color:#cfe7ff}
 
-    /* É PARA VOCÊ / NÃO É PARA VOCÊ */
+    /* FIT SECTION */
     .fit-grid{display:grid;gap:22px}
     @media(min-width:860px){.fit-grid{grid-template-columns:1fr 1fr}}
-    .fit-card{
-      border:1px solid var(--line);border-radius:18px;padding:22px;
-      box-shadow:0 10px 26px rgba(0,0,0,.05)
-    }
-    .fit-yes{background:#ECFDF5}            /* verde bem claro */
-    .fit-no{background:#FFE4EA}             /* rosa claro de alerta */
-    .fit-title{
-      margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px);
-      display:flex;gap:10px;align-items:center;color:var(--ink)
-    }
-    .fit-title .badge-yes{
-      background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0;
-      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
-    }
-    .fit-title .badge-no{
-      background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3;
-      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
-    }
+    .fit-card{border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 26px rgba(0,0,0,.05)}
+    .fit-yes{background:#ECFDF5}
+    .fit-no{background:#FFE4EA}
+    .fit-title{margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px)}
     .fit-list{margin:8px 0 0 0;padding:0;list-style:none}
     .fit-list li{display:flex;gap:10px;align-items:flex-start;margin:10px 0;color:var(--ink)}
     .fit-list .icon{font-weight:900;flex:0 0 auto;margin-top:1px}
@@ -134,35 +113,15 @@
     /* FAQ — pergunta rosa / resposta azul */
     .faq{max-width:980px;margin:0 auto}
     .faq-item{
-      margin:12px 0;
-      border-radius:14px;
-      overflow:hidden;
-      box-shadow:0 6px 18px rgba(0,0,0,.06);
-      border:1px solid var(--line);
+      margin:12px 0;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);border:1px solid var(--line);
     }
     .faq-q{
-      width:100%;
-      text-align:left;
-      background:var(--rose);       /* rosa */
-      border:0;
-      padding:16px 18px;
-      font-size:18px;
-      font-weight:900;
-      color:#fff;                   /* texto branco */
-      cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center;
+      width:100%;text-align:left;background:var(--rose);border:0;padding:16px 18px;font-size:18px;font-weight:900;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
     }
-    .faq-q .mark{flex:0 0 auto; font-weight:900; color:#fff}
+    .faq-q .mark{flex:0 0 auto;font-weight:900;color:#fff}
     .faq-q:focus{outline:3px solid var(--blue-2)}
-    .faq-a{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .28s ease;
-      background:var(--blue);       /* azul */
-      color:#fff;                   /* texto branco */
-      border-top:1px solid var(--line);
-    }
-    .faq-a-inner{padding:16px 18px; font-size:16px; line-height:1.55}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;background:var(--blue);color:#fff;border-top:1px solid var(--line)}
+    .faq-a-inner{padding:16px 18px;font-size:16px;line-height:1.55}
     .faq-item.open .faq-a{max-height:360px}
     .faq-item.open .faq-q .mark{opacity:.9}
 
@@ -181,6 +140,9 @@
     @media (max-width:640px){
       .whats-float{top:auto; bottom:18px; right:18px; transform:none;}
     }
+
+    /* Google Form responsivo (largura 100%) */
+    .gform-embed iframe{width:100% !important; max-width:100%; border:0}
   </style>
 </head>
 <body>
@@ -202,7 +164,6 @@
             <h2 class="grad-left">O que é a vivência?</h2>
             <p>Mais que um encontro: um dia imersivo para casais mergulharem em experiências que abrem espaço para diálogo, afeto, perdão e sonho compartilhado. Aqui, vocês vão se olhar de novo, se ouvir de verdade e reencontrar o amor como escolha diária.</p>
           </div>
-
           <div class="card blue">
             <h2 class="grad-left">Resultados</h2>
             <ul class="list-check">
@@ -265,11 +226,9 @@
   <section id="para-quem">
     <div class="wrap">
       <h2 class="section-title">É para você se... / Não é para você se...</h2>
-
       <div class="fit-grid">
-        <!-- É para você -->
         <div class="fit-card fit-yes">
-          <h3 class="fit-title"><span class="badge-yes">É para você se...</span></h3>
+          <h3 class="fit-title">É para você se...</h3>
           <ul class="fit-list">
             <li><span class="icon ok">✓</span><span>Vocês querem <strong>reconectar</strong> e fortalecer o diálogo com leveza e respeito.</span></li>
             <li><span class="icon ok">✓</span><span>Topam olhar para <strong>padrões da relação</strong> e assumir corresponsabilidade.</span></li>
@@ -278,10 +237,8 @@
             <li><span class="icon ok">✓</span><span>Podem dedicar um <strong>dia inteiro</strong> de presença para a relação.</span></li>
           </ul>
         </div>
-
-        <!-- Não é para você -->
         <div class="fit-card fit-no">
-          <h3 class="fit-title"><span class="badge-no">Não é para você se...</span></h3>
+          <h3 class="fit-title">Não é para você se...</h3>
           <ul class="fit-list">
             <li><span class="icon no">×</span><span>Procura <strong>terapia individual/psiquiátrica de urgência</strong> ou atendimento clínico.</span></li>
             <li><span class="icon no">×</span><span>Espera <strong>solução mágica</strong> sem participação ativa.</span></li>
@@ -294,117 +251,65 @@
     </div>
   </section>
 
-  <!-- FAQ (pergunta rosa, resposta azul) -->
+  <!-- FAQ -->
   <section id="faq">
     <div class="wrap">
       <h2 class="section-title">Perguntas Frequentes</h2>
       <div class="faq">
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Para quem é a vivência?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Para quem é a vivência?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Precisa expor a vida do casal no grupo?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Precisa expor a vida do casal no grupo?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O que acontece durante o dia?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>O que acontece durante o dia?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Há pré-requisito para participar?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Há pré-requisito para participar?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O investimento é por pessoa ou por casal?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>O investimento é por pessoa ou por casal?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">O valor informado é por casal. Os lotes variam conforme a disponibilidade de vagas.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Qual é o horário e a duração?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Qual é o horário e a duração?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Um dia inteiro de imersão, das 08h00 às 17h00. Data e local confirmados via WhatsApp após o cadastro.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O que levar no dia?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>O que levar no dia?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Roupas confortáveis, água e um caderno para anotações. O essencial é a disponibilidade para viver a experiência.</div></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Como faço para garantir a vaga?</span>
-            <span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-a-inner">
-              Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.
-            </div>
-          </div>
+          <button class="faq-q" aria-expanded="false"><span>Como faço para garantir a vaga?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.</div></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- INSCRIÇÃO -->
+  <!-- INSCRIÇÃO COM GOOGLE FORMS -->
   <section id="inscricao" style="padding:40px 20px">
-    <div class="wrap" style="text-align:center">
-      <p style="margin:0 0 12px;color:var(--soft)">Vagas limitadas • 08h às 17h • <em>Data & Local a confirmar</em></p>
-      <a href="https://wa.me/5549998110445?text=Quero%20garantir%20minha%20vaga%20na%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn primary" target="_blank" rel="noopener">Garantir minha vaga</a>
+    <div class="wrap" style="max-width:980px;">
+      <h2 class="section-title">Inscrição</h2>
+      <p style="margin:0 0 16px;color:var(--soft);text-align:center">
+        Preencha o formulário abaixo para solicitar sua vaga. Após o envio, retornaremos pelo WhatsApp com os próximos passos.
+      </p>
+      <div class="gform-embed" style="border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.05)">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform?embedded=true"
+          width="640" height="2241" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+      </div>
+
+      <div style="text-align:center;margin-top:16px">
+        <a href="https://wa.me/5549998110445?text=Enviei%20o%20formul%C3%A1rio%20da%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn ghost" target="_blank" rel="noopener">
+          Avisei no WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
@@ -439,7 +344,6 @@
         const btn = item.querySelector('.faq-q');
         const panel = item.querySelector('.faq-a');
         btn.addEventListener('click', () => {
-          // fecha todos os outros
           items.forEach(i => {
             if(i !== item){
               i.classList.remove('open');
@@ -449,7 +353,6 @@
               p && p.setAttribute('aria-hidden','true');
             }
           });
-          // alterna este
           const isOpen = item.classList.toggle('open');
           btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
@@ -457,5 +360,8 @@
       });
     })();
   </script>
+</body>
+</html>
+
 </body>
 </html>
