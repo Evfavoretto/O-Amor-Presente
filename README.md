@@ -1,135 +1,116 @@
 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>O Amor Presente — Vivência de Casais</title>
-  <meta name="description" content="Vivência de Casais O Amor Presente — um dia inteiro para reconectar, comunicar, ressignificar e fortalecer o compromisso consciente." />
-  <style>
-    /* Esconde título padrão do GitHub Pages */
-    header .project-name, header .site-title, h1.project-name, h1.site-title { display:none !important; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Amor Presente — Vivência de Casais</title>
+<meta name="description" content="Uma vivência pequena no tamanho e grande no sentido: um dia para reconectar, ouvir e escolher o amor de novo.">
+<style>
+  :root{
+    --rose:#C9376E;        /* rosa da logo */
+    --rose-soft:#FCE7F1;   /* rosa claro de apoio */
+    --blue:#43A5FF;        /* azul da logo */
+    --blue-soft:#E8F3FF;   /* azul claro de apoio */
+    --ink:#1F2330;
+    --soft:#667085;
+    --line:#E9EEF5;
+    --bg:#FFFFFF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  img{max-width:100%;display:block}
+  a{text-decoration:none}
 
-    :root{
-      --rose:#C9376E;
-      --rose-2:#FDE7F0;
-      --blue:#4DA6FF;
-      --blue-2:#E6F3FF;
-      --ink:#1F2330;
-      --soft:#667085;
-      --bg:#ffffff;
-      --success:#10B981;
-      --line:#EEF2F6;
-    }
+  /* Página pequena */
+  .wrap{max-width:880px;margin:0 auto;padding:22px}
+  header{padding:20px 0 8px;background:#fff;border-bottom:1px solid var(--line)}
+  .brand{display:flex;gap:14px;align-items:center;justify-content:center}
+  .brand img{width:140px;height:auto}
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    img{max-width:100%;display:block}
-    a{color:var(--rose);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
+  /* Cartão central pequeno */
+  .card{margin:18px auto 16px;max-width:760px;background:#fff;border:1px solid var(--line);
+    border-radius:18px;padding:22px 18px;box-shadow:0 8px 26px rgba(0,0,0,.06)}
+  .tag{display:inline-block;background:linear-gradient(90deg,var(--rose-soft),var(--blue-soft));
+    color:var(--rose);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+    padding:6px 10px;border-radius:999px;margin-bottom:6px}
+  h1{font-size:clamp(26px,4.8vw,38px);margin:6px 0 8px;text-align:center}
+  .lead{color:var(--soft);font-size:18px;text-align:center;max-width:640px;margin:0 auto}
 
-    /* ===== HERO ===== */
-    header{
-      position:relative;
-      background:linear-gradient(135deg, rgba(201,55,110,.08) 0%, rgba(77,166,255,.08) 100%);
-      padding:56px 0 72px;
-    }
-    .hero-band{
-      position:absolute; inset:0 0 auto 0; height:10px;
-      background:linear-gradient(90deg, var(--rose) 0%, var(--blue) 100%);
-    }
-    .hero-card{
-      margin:0 auto; max-width:880px; text-align:center;
-      background:#fff; border:1px solid var(--line); border-radius:20px;
-      padding:28px 24px 32px;
-      box-shadow:0 10px 30px rgba(31,35,48,.08);
-    }
-    .logo{max-width:180px; margin:0 auto 14px}
-    .badge{display:inline-block;background:var(--blue-2);color:#1d4ed8;border:1px solid #dbeafe;padding:8px 12px;border-radius:999px;font-size:14px;margin:8px 0 10px}
-    h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:6px 0 6px}
-    .subtitle{font-size:clamp(16px,2.6vw,22px);color:var(--soft);max-width:760px;margin:0 auto}
-    .cta-wrap{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
-    .btn{display:inline-block;padding:14px 20px;border-radius:12px;font-weight:700;transition:.2s ease;box-shadow:0 6px 14px rgba(0,0,0,.06)}
-    .btn-primary{background:var(--rose);color:#fff}
-    .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.02)}
-    .btn-outline{border:2px solid var(--rose);color:var(--rose);background:#fff}
-    .btn-outline:hover{background:var(--rose);color:#fff}
+  /* Frase que fala de amor */
+  .poem{margin:14px auto 2px;max-width:640px;text-align:center;font-size:18px;color:#0f172a}
+  .poem em{color:var(--rose)}
+  .divider{height:8px;margin:16px auto 8px;max-width:220px;border-radius:999px;
+    background:linear-gradient(90deg,var(--rose),var(--blue))}
 
-    /* ===== SEÇÕES ===== */
-    section{padding:56px 0;border-bottom:1px solid var(--line)}
-    .grid{display:grid;gap:22px}
-    .two{grid-template-columns:1fr}
-    @media(min-width:860px){ .two{grid-template-columns:1fr 1fr} }
-    h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 14px}
-    p{margin:8px 0 0;font-size:18px;color:var(--soft)}
-    ul{margin:8px 0 0 18px;color:var(--soft);font-size:18px}
-    li{margin:8px 0}
+  /* Blocos curtíssimos */
+  .mini{display:grid;gap:12px;margin:12px auto 0;max-width:760px}
+  .mini .item{background:linear-gradient(90deg,var(--blue-soft),#fff);border:1px solid var(--line);
+    border-radius:14px;padding:12px 14px}
+  .item strong{color:var(--rose)}
+  .mentores{display:flex;gap:14px;align-items:center;justify-content:center;margin:12px auto 0}
+  .mentores img{width:86px;height:86px;object-fit:cover;border-radius:12px;border:2px solid var(--line)}
+  .mentores p{margin:0;color:var(--soft);font-size:14px}
 
-    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(31,35,48,.04)}
-    .pill{display:inline-block;background:var(--blue-2);color:#1d4ed8;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px;margin-bottom:8px}
-    .kicker{font-weight:800;color:var(--rose);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-    .list-check li{list-style:none;padding-left:28px;position:relative}
-    .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:900}
+  /* CTA compacto */
+  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:12px 0 4px}
+  .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:800;box-shadow:0 6px 14px rgba(0,0,0,.06)}
+  .primary{background:var(--rose);color:#fff}
+  .ghost{background:#fff;border:2px solid var(--blue);color:var(--blue)}
+  .primary:hover{filter:brightness(1.05)}
+  .ghost:hover{background:var(--blue);color:#fff}
 
-    /* Faixas suaves para respiro visual */
-    .soft{background:var(--blue-2)}
-    .soft-rose{background:var(--rose-2)}
-
-    /* Pricing */
-    .pricing{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:860px){ .pricing{grid-template-columns:repeat(3,1fr)} }
-    .price-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
-    .price{font-size:34px;font-weight:900;color:var(--rose);margin:8px 0}
-    .muted{color:#94a3b8}
-
-    /* Depoimentos (texto + nome) */
-    .testimonials{display:grid;gap:18px}
-    @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
-    .t-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 8px 20px rgba(31,35,48,.04)}
-    .t-name{font-weight:800;margin:0 0 6px;font-size:15px;color:#0f172a}
-    .t-text{margin:0;color:#1f2937;font-size:17px;line-height:1.5}
-
-    /* Instrutores */
-    .mentores{display:flex;flex-direction:column;align-items:center;text-align:center}
-    .mentores img{max-width:340px;border-radius:16px;margin-bottom:18px;box-shadow:0 10px 28px rgba(0,0,0,.10)}
-    .mentores p{max-width:780px}
-
-    /* Bloco final */
-    .footer-cta{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.05)}
-    footer{padding:36px 0;color:#94a3b8;font-size:14px}
-  </style>
+  /* Rodapé mini */
+  footer{padding:18px 0 24px;text-align:center;color:#95A1B2;font-size:13px;border-top:1px solid var(--line)}
+</style>
 </head>
 <body>
 
+<div class="wrap">
   <header>
-    <div class="hero-band" aria-hidden="true"></div>
-    <div class="container">
-      <!-- Cartão branco da logo/título -->
-      <div class="hero-card">
-        <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
-        <span class="badge">Vivência de Casais</span>
-        <h1>O Amor Presente</h1>
-        <p class="subtitle"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — uma jornada para reconectar emoções, renovar o vínculo e despertar a verdadeira parceria.</p>
-        <div class="cta-wrap">
-          <a href="#inscricao" class="btn btn-primary">Quero Participar</a>
-          <a href="#como-sera" class="btn btn-outline">Como será o dia?</a>
-        </div>
-      </div>
+    <div class="brand">
+      <img src="logo1.png" alt="Logo O Amor Presente">
     </div>
   </header>
 
-  <main class="container">
+  <main>
+    <section class="card">
+      <span class="tag">Vivência de Casais</span>
+      <h1>O Amor Presente</h1>
+      <p class="lead">Pequena no tamanho, grande no sentido: um encontro para <strong>ouvir</strong>, <strong>sentir</strong> e <strong>escolher o amor</strong> de novo.</p>
 
-    <section id="sobre">
-      <div class="grid two">
-        <div>
-          <h2>O que é a vivência?</h2>
-          <p>Mais que um encontro: um dia imersivo para casais mergulharem em experiências que abrem espaço para diálogo, afeto, perdão e sonho compartilhado. Aqui, vocês vão se olhar de novo, se ouvir de verdade e reencontrar o amor como escolha diária.</p>
-        </div>
-        <div class="card">
-          <span class="pill">Objetivos</span>
-          <h3 class="kicker">Resultados que você leva</h3>
-          <ul class="list-check">
-            <li><strong>Reconexão emocional</strong>: sentir novamente o encanto do início;</li>
-            <li><strong>Comunicação profunda e respeitosa</strong>;</li>
-            <li><strong>Ressignificação de feridas</strong> e aprendizados;</li>
-            <li><strong>Compromisso consciente</strong>: escolher amar todos os dias;</
+      <div class="poem">Amor é <em>presença</em>: olhar nos olhos, dar espaço à verdade,
+        cuidar das raízes e lembrar — todos os dias — que o outro é a nossa casa.</div>
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="mini">
+        <div class="item"><strong>Para quem?</strong> Casais que querem leveza, respeito e parceria — sem manual, sem julgamento.</div>
+        <div class="item"><strong>O que acontece?</strong> Dinâmicas simples, conversa de coração aberto e um pacto de cuidado para a vida a dois.</div>
+        <div class="item"><strong>Resultado:</strong> mais presença, mais diálogo, mais nós.</div>
+      </div>
+
+      <div class="mentores">
+        <img src="evandro-alinne.jpg" alt="Evandro e Alinne">
+        <p><strong>Evandro & Alinne</strong> — mentores da vivência. Facilitam com acolhimento, clareza e um olhar sistêmico sobre o vínculo.</p>
+      </div>
+
+      <div class="cta">
+        <a href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn ghost" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a href="#inscricao" class="btn primary">Quero participar</a>
+      </div>
+    </section>
+
+    <section id="inscricao" class="card" style="text-align:center">
+      <p style="margin:0 0 8px;color:var(--soft)">Vagas limitadas • Horário: 08h às 17h • <em>Data & Local a confirmar</em></p>
+      <a href="https://wa.me/5549998110445?text=Quero%20garantir%20minha%20vaga%20na%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn primary" target="_blank" rel="noopener">Garantir minha vaga</a>
+    </section>
+  </main>
+
+  <footer>
+    © O Amor Presente — Vivência de Casais
+  </footer>
+</div>
+
+</body>
+</html>
