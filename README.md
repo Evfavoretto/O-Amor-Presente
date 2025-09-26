@@ -15,6 +15,7 @@
       --line:#E9EEF5;
       --bg:#FFFFFF;
       --success:#10B981;
+      --warn:#E11D48;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
@@ -102,6 +103,33 @@
     .t-name{font-weight:900;margin:0 0 6px;font-size:16px}
     .woman{background:var(--rose-2);border-color:#F9C9DA}
     .man{background:var(--blue-2);border-color:#cfe7ff}
+
+    /* É PARA VOCÊ / NÃO É PARA VOCÊ */
+    .fit-grid{display:grid;gap:22px}
+    @media(min-width:860px){.fit-grid{grid-template-columns:1fr 1fr}}
+    .fit-card{
+      border:1px solid var(--line);border-radius:18px;padding:22px;
+      box-shadow:0 10px 26px rgba(0,0,0,.05)
+    }
+    .fit-yes{background:#ECFDF5}            /* verde bem claro */
+    .fit-no{background:#FFE4EA}             /* rosa claro de alerta */
+    .fit-title{
+      margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px);
+      display:flex;gap:10px;align-items:center;color:var(--ink)
+    }
+    .fit-title .badge-yes{
+      background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0;
+      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
+    }
+    .fit-title .badge-no{
+      background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3;
+      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
+    }
+    .fit-list{margin:8px 0 0 0;padding:0;list-style:none}
+    .fit-list li{display:flex;gap:10px;align-items:flex-start;margin:10px 0;color:var(--ink)}
+    .fit-list .icon{font-weight:900;flex:0 0 auto;margin-top:1px}
+    .fit-list .ok{color:var(--success)}
+    .fit-list .no{color:var(--rose)}
 
     /* FAQ — pergunta rosa / resposta azul */
     .faq{max-width:980px;margin:0 auto}
@@ -229,6 +257,39 @@
         <div class="t-card man"><p class="t-name">Valdemar</p><p>Senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div>
         <div class="t-card woman"><p class="t-name">Roselei Teles</p><p>Um relacionamento saudável é baseado em confiança, em si mesma e no outro; compreender as dores e respeitar o momento de cada um.</p></div>
         <div class="t-card woman"><p class="t-name">Claudete</p><p>Importante a confiança e o compartilhamento de sonhos e projetos. Condução e responsabilidade caminham juntas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- É PARA VOCÊ / NÃO É PARA VOCÊ -->
+  <section id="para-quem">
+    <div class="wrap">
+      <h2 class="section-title">É para você se... / Não é para você se...</h2>
+
+      <div class="fit-grid">
+        <!-- É para você -->
+        <div class="fit-card fit-yes">
+          <h3 class="fit-title"><span class="badge-yes">É para você se...</span></h3>
+          <ul class="fit-list">
+            <li><span class="icon ok">✓</span><span>Vocês querem <strong>reconectar</strong> e fortalecer o diálogo com leveza e respeito.</span></li>
+            <li><span class="icon ok">✓</span><span>Topam olhar para <strong>padrões da relação</strong> e assumir corresponsabilidade.</span></li>
+            <li><span class="icon ok">✓</span><span>Estão dispostos a <strong>praticar linguagens do amor</strong> no cotidiano.</span></li>
+            <li><span class="icon ok">✓</span><span>Buscam um <strong>espaço seguro</strong>, com condução profissional e acolhedora.</span></li>
+            <li><span class="icon ok">✓</span><span>Podem dedicar um <strong>dia inteiro</strong> de presença para a relação.</span></li>
+          </ul>
+        </div>
+
+        <!-- Não é para você -->
+        <div class="fit-card fit-no">
+          <h3 class="fit-title"><span class="badge-no">Não é para você se...</span></h3>
+          <ul class="fit-list">
+            <li><span class="icon no">×</span><span>Procura <strong>terapia individual/psiquiátrica de urgência</strong> ou atendimento clínico.</span></li>
+            <li><span class="icon no">×</span><span>Espera <strong>solução mágica</strong> sem participação ativa.</span></li>
+            <li><span class="icon no">×</span><span>Quer “<strong>vencer discussões</strong>” ou expor o parceiro(a) no grupo.</span></li>
+            <li><span class="icon no">×</span><span>Há <strong>situação de violência</strong> no relacionamento (encaminhamos à rede de proteção adequada).</span></li>
+            <li><span class="icon no">×</span><span>Não é possível estarem <strong>presencialmente juntos</strong> no dia da vivência.</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
