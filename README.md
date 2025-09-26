@@ -20,20 +20,21 @@
     header {
       background:var(--rose);
       text-align:center;
-      padding:80px 24px;   /* aumentei bastante para cobrir o título azul */
+      padding:160px 24px 80px; /* aumentei muito o espaço de cima */
       color:#fff;
       position:relative;
+      z-index:10;
     }
 
     header img.logo {
-      max-height:160px;
+      max-height:180px;
       width:auto;
       display:block;
       margin:0 auto 18px;
     }
 
     header .badge {
-      font-size:30px;
+      font-size:34px;
       font-weight:700;
       text-transform:uppercase;
       letter-spacing:.06em;
@@ -42,7 +43,7 @@
     section {padding:56px 20px;max-width:1100px;margin:0 auto}
 
     h2 {
-      font-size:36px;
+      font-size:38px;
       margin:0 0 18px;
       background: linear-gradient(90deg, var(--rose), var(--blue));
       -webkit-background-clip:text;
@@ -155,7 +156,7 @@
     <section id="depoimentos">
       <h2>Depoimentos</h2>
       <div class="testimonials">
-        <div class="t-card woman"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro...</p></div>
+        <div class="t-card woman"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal...</p></div>
         <div class="t-card man"><p class="t-name">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento...</p></div>
         <div class="t-card woman"><p class="t-name">Alini De Paris</p><p class="t-text">Hoje valeu a pena porque a comunicação clara e expressiva em um relacionamento é muito importante...</p></div>
         <div class="t-card man"><p class="t-name">Marcelo Pissaia Novo</p><p class="t-text">Hoje percebi que devemos olhar para a pessoa que está ao nosso lado com amor e respeito...</p></div>
