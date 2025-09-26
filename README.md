@@ -1,21 +1,18 @@
-
-
-
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>O Amor Presente — Vivência de Casais</title>
-<meta name="description" content="Um encontro pequeno no tamanho e grande no sentido: reconectar, ouvir e escolher o amor de novo.">
+<meta name="description" content="Vivência de Casais — um encontro para reconectar, comunicar e fortalecer o compromisso consciente.">
 <style>
   /* Esconde cabeçalhos injetados pelo GitHub Pages */
   .site-header,.page-header,header .project-name,header .site-title,h1.project-name,h1.site-title{display:none!important}
 
   :root{
-    --rose:#C9376E;        /* rosa da logo */
-    --rose-10:#FDE7F1;     /* rosa claro */
-    --blue:#43A5FF;        /* azul claro da logo */
-    --blue-10:#E8F3FF;     /* azul clarinho */
+    --rose:#C9376E;   /* rosa da logo */
+    --rose-10:#FDE7F1;
+    --blue:#43A5FF;   /* azul claro da logo */
+    --blue-10:#E8F3FF;
     --ink:#1F2330;
     --soft:#667085;
     --line:#E9EEF5;
@@ -29,44 +26,58 @@
   img{max-width:100%;display:block}
   a{text-decoration:none}
 
-  .wrap{max-width:900px;margin:0 auto;padding:22px}
+  .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
-  /* HERO – cartão branco com logo grande */
+  /* HERO – badge + logo grande em cartão branco */
   .hero{padding:28px 0 12px;background:linear-gradient(135deg, rgba(201,55,110,.06), rgba(67,165,255,.06))}
   .hero-card{
-    background:#fff;border:1px solid var(--line);border-radius:18px;
-    padding:18px 18px 22px;margin:0 auto;max-width:820px;
-    box-shadow:0 10px 26px rgba(0,0,0,.06);text-align:center
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:22px 22px 26px;margin:0 auto;max-width:900px;
+    box-shadow:0 12px 30px rgba(0,0,0,.06);text-align:center
   }
-  .logo{width:min(280px,70vw);margin:0 auto 8px} /* AUMENTADA */
   .tag{display:inline-block;background:var(--blue-10);color:#1d4ed8;border:1px solid #dbeafe;
-    font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;
-    padding:6px 10px;border-radius:999px;margin-top:8px}
-  /* Removido o h1 "O Amor Presente" como você pediu */
-  .lead{color:var(--soft);font-size:18px;text-align:center;max-width:640px;margin:10px auto 0}
-
-  .poem{margin:14px auto 4px;max-width:640px;text-align:center;font-size:18px;color:#0f172a}
-  .poem em{color:var(--rose)}
-  .divider{height:8px;margin:16px auto 14px;max-width:220px;border-radius:999px;
+    font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    padding:8px 12px;border-radius:999px;margin-bottom:12px}
+  .logo{width:min(320px,78vw);margin:0 auto 8px} /* LOGO GRANDE */
+  .lead{color:var(--soft);font-size:19px;text-align:center;max-width:780px;margin:10px auto 0}
+  .divider{height:8px;margin:20px auto 18px;max-width:240px;border-radius:999px;
     background:linear-gradient(90deg,var(--rose),var(--blue))}
 
-  /* Mini blocos */
-  section{padding:42px 0;border-bottom:1px solid var(--line)}
-  .mini{display:grid;gap:12px;margin:8px auto 0;max-width:820px}
-  .mini .item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-  .item strong{color:var(--rose)}
+  /* Blocos curtos */
+  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  .grid{display:grid;gap:22px}
+  .two{grid-template-columns:1fr}
+  @media(min-width:860px){ .two{grid-template-columns:1fr 1fr} }
+  h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 14px}
+  p{margin:8px 0 0;font-size:18px;color:var(--soft)}
+  ul{margin:8px 0 0 18px;color:var(--soft);font-size:18px}
+  li{margin:8px 0}
+
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(31,35,48,.05)}
+  .pill{display:inline-block;background:var(--blue-10);color:#1d4ed8;padding:6px 12px;border-radius:999px;font-weight:800;font-size:12px;margin-bottom:8px}
+  .kicker{font-weight:900;color:var(--rose);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+  .list-check li{list-style:none;padding-left:28px;position:relative}
+  .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:900}
 
   /* Mentores */
-  .mentores{display:flex;gap:14px;align-items:center;justify-content:center;margin:14px auto 0;text-align:center}
-  .mentores img{width:96px;height:96px;object-fit:cover;border-radius:12px;border:2px solid var(--line)}
-  .mentores p{margin:0;color:var(--soft);font-size:14px;max-width:560px}
+  .mentores{display:flex;gap:16px;align-items:center;justify-content:center;margin:14px auto 0;text-align:center}
+  .mentores img{width:110px;height:110px;object-fit:cover;border-radius:14px;border:2px solid var(--line)}
+  .mentores p{margin:0;color:var(--soft);font-size:15px;max-width:640px}
 
-  /* Depoimentos alternados por gênero */
+  /* Pricing */
+  .pricing{display:grid;gap:16px}
+  @media(min-width:860px){ .pricing{grid-template-columns:repeat(3,1fr)} }
+  .price-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;box-shadow:0 8px 24px rgba(31,35,48,.05)}
+  .price-card .pill{background:var(--rose-10);color:var(--rose)}
+  .price{font-size:36px;font-weight:900;color:var(--rose);margin:8px 0}
+  .muted{color:#94a3b8}
+
+  /* Depoimentos alternando por gênero */
   #depoimentos{background:#fff}
-  .testimonials{display:grid;gap:16px;max-width:820px;margin:0 auto}
+  .testimonials{display:grid;gap:16px;max-width:900px;margin:0 auto}
   @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
-  .t-card{border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
-  .t-name{font-weight:800;margin:0 0 6px;font-size:15px}
+  .t-card{border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 6px 18px rgba(0,0,0,.05)}
+  .t-name{font-weight:900;margin:0 0 6px;font-size:15px}
   .t-text{margin:0;color:#1f2937;font-size:16.5px;line-height:1.5}
   /* Mulher = rosa; Homem = azul */
   .t-f{background:var(--rose-10);border-color:#F9C9DA}
@@ -75,15 +86,26 @@
   .t-m .t-name{color:var(--blue)}
 
   /* CTA */
-  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0 0}
-  .btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:800;box-shadow:0 6px 14px rgba(0,0,0,.06)}
+  .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0 0}
+  .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:900;box-shadow:0 6px 14px rgba(0,0,0,.06)}
   .primary{background:var(--rose);color:#fff}
   .ghost{background:#fff;border:2px solid var(--blue);color:var(--blue)}
   .primary:hover{filter:brightness(1.05)}
   .ghost:hover{background:var(--blue);color:#fff}
 
-  /* Rodapé com fundo rosa */
-  footer{padding:18px 0 24px;text-align:center;background:var(--rose);color:#fff;font-size:13px;border-top:1px solid var(--rose)}
+  /* Botão flutuante de WhatsApp */
+  .whats-float{
+    position:fixed; right:18px; bottom:18px; z-index:1000;
+    width:60px; height:60px; border-radius:50%;
+    background:linear-gradient(135deg,#25D366,#1EBE57);
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .whats-float svg{width:30px; height:30px; fill:#fff}
+  .whats-float:active{transform:scale(.98)}
+
+  /* Rodapé rosa */
+  footer{padding:20px 0 26px;text-align:center;background:var(--rose);color:#fff;font-size:13px;border-top:1px solid var(--rose)}
 </style>
 </head>
 <body>
@@ -92,21 +114,30 @@
 <div class="hero">
   <div class="wrap">
     <div class="hero-card">
-      <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
       <span class="tag">Vivência de Casais</span>
-      <p class="lead">Um encontro pequeno no tamanho e grande no sentido: <strong>ouvir</strong>, <strong>sentir</strong> e <strong>escolher o amor</strong> de novo.</p>
-      <div class="poem">Amor é <em>presença</em>: olhar nos olhos, dar espaço à verdade, cuidar das raízes e lembrar — todos os dias — que o outro é a nossa casa.</div>
+      <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
+      <p class="lead"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — um dia para olhar, ouvir e reescolher o vínculo com presença.</p>
       <div class="divider" aria-hidden="true"></div>
-
-      <div class="mini">
-        <div class="item"><strong>Para quem?</strong> Casais que querem leveza, respeito e parceria — sem manual, sem julgamento.</div>
-        <div class="item"><strong>O que acontece?</strong> Dinâmicas simples, conversa de coração aberto e um pacto de cuidado para a vida a dois.</div>
-        <div class="item"><strong>Resultado:</strong> mais presença, mais diálogo, mais nós.</div>
+      <div class="grid two">
+        <div class="card">
+          <span class="pill">O que é</span>
+          <h2>Um encontro vivo</h2>
+          <p>Dinâmicas simples, conversa sincera e um espaço seguro para cuidar do que sustenta o amor — todos os dias.</p>
+        </div>
+        <div class="card">
+          <span class="pill">Resultados</span>
+          <ul class="list-check">
+            <li><strong>Reconexão emocional</strong>;</li>
+            <li><strong>Comunicação respeitosa</strong> e clara;</li>
+            <li><strong>Ressignificação de feridas</strong>;</li>
+            <li><strong>Compromisso consciente</strong> a dois.</li>
+          </ul>
+        </div>
       </div>
 
       <div class="mentores">
         <img src="evandro-alinne.jpg" alt="Evandro e Alinne">
-        <p><strong>Evandro & Alinne</strong> — mentores da vivência. Facilitam com acolhimento, clareza e um olhar sistêmico sobre o vínculo.</p>
+        <p><strong>Evandro & Alinne</strong> — mentores da vivência, com olhar sistêmico e acolhedor para fortalecer a parceria.</p>
       </div>
 
       <div class="cta">
@@ -117,35 +148,60 @@
   </div>
 </div>
 
-<!-- DEPOIMENTOS (alternando F/M começando com mulher) -->
+<!-- INVESTIMENTO -->
+<section id="precos">
+  <div class="wrap">
+    <h2 style="text-align:center;margin:0 0 14px">Investimento (por casal)</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="pill">1º Lote</div>
+        <div class="price">R$ 620,00</div>
+        <p class="muted">Vagas limitadas</p>
+      </div>
+      <div class="price-card">
+        <div class="pill">2º Lote</div>
+        <div class="price">R$ 800,00</div>
+        <p class="muted">Sujeito à disponibilidade</p>
+      </div>
+      <div class="price-card">
+        <div class="pill">3º Lote</div>
+        <div class="price">R$ 998,00</div>
+        <p class="muted">Últimas vagas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS (F, M, F, M, F, M, F, M, F, F) -->
 <section id="depoimentos">
   <div class="wrap">
     <h2 style="text-align:center;margin:0 0 12px">Depoimentos</h2>
     <div class="testimonials">
-      <!-- F -->
+      <!-- 1 F -->
       <div class="t-card t-f"><p class="t-name">Grasiela Nardino</p><p class="t-text">Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro e sempre levar em consideração ambas as colocações. Em sintonia podemos crescer e evoluir muito mais.</p></div>
-      <!-- M -->
+      <!-- 2 M -->
       <div class="t-card t-m"><p class="t-name">Mateus Battistela</p><p class="t-text">Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento, as linguagens do amor e a importância de saber ouvir e se apoiar.</p></div>
-      <!-- F -->
+      <!-- 3 F -->
       <div class="t-card t-f"><p class="t-name">Alini De Paris</p><p class="t-text">A comunicação clara e expressiva, respeitando o tempo e a individualidade do outro, cria um ambiente mais seguro e acolhedor, fortalecendo nossa conexão emocional.</p></div>
-      <!-- M -->
+      <!-- 4 M -->
       <div class="t-card t-m"><p class="t-name">Jean Camargo</p><p class="t-text">Percebi que precisamos cultivar amor próprio para depois oferecer na relação, em sintonia na comunicação e escutando com amor — cultivando boas raízes.</p></div>
-      <!-- F -->
+      <!-- 5 F -->
       <div class="t-card t-f"><p class="t-name">Joice</p><p class="t-text">Uma experiência única que superou as expectativas. Precisamos cuidar do nosso casamento para vivermos de maneira leve e feliz.</p></div>
-      <!-- M -->
+      <!-- 6 M -->
       <div class="t-card t-m"><p class="t-name">Marcelo Pissaia Novo</p><p class="t-text">Devemos olhar para quem está ao nosso lado com amor e respeito, nos apoiar nos momentos difíceis e nunca largar a mão.</p></div>
-      <!-- F -->
+      <!-- 7 F -->
       <div class="t-card t-f"><p class="t-name">Ivete</p><p class="t-text">Valeu a pena o encontro de casal para entender um ao outro, apoiar sempre, tirar as dores e cuidar das nossas raízes.</p></div>
-      <!-- M -->
+      <!-- 8 M -->
       <div class="t-card t-m"><p class="t-name">Valdemar</p><p class="t-text">Senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div>
-      <!-- F (restantes) -->
+      <!-- 9 F -->
       <div class="t-card t-f"><p class="t-name">Roselei Teles</p><p class="t-text">Um relacionamento saudável é baseado em confiança, em si mesma e no outro; compreender as dores e respeitar o momento de cada um.</p></div>
+      <!-- 10 F -->
       <div class="t-card t-f"><p class="t-name">Claudete</p><p class="t-text">Importante a confiança e o compartilhamento de sonhos e projetos. Condução e responsabilidade caminham juntas.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CTA final curtinha -->
+<!-- CTA final -->
 <section id="inscricao" style="padding:28px 0">
   <div class="wrap" style="text-align:center">
     <p style="margin:0 0 10px;color:var(--soft)">Vagas limitadas • 08h às 17h • <em>Data & Local a confirmar</em></p>
@@ -154,8 +210,13 @@
 </section>
 
 <footer>
-  <div class="wrap">© O Amor Presente — Vivência de Casais. Todos os direitos reservados.</div>
+  <div class="wrap">© Todos os direitos reservados.   O Amor Presente — Vivência de Casais. </div>
 </footer>
+
+<!-- Botão flutuante de WhatsApp -->
+<a class="whats-float" href="https://wa.me/5549998110445?text=Oi%20Evandro!%20Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
+</a>
 
 </body>
 </html>
