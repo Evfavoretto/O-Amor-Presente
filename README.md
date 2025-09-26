@@ -6,6 +6,12 @@
   <title>Vivência de Casais – O Amor Presente</title>
   <meta name="description" content="Vivência de Casais O Amor Presente — um dia inteiro para reconectar, comunicar, ressignificar e fortalecer o compromisso consciente." />
   <style>
+    header .project-name,
+header .site-title,
+h1.project-name,
+h1.site-title {
+  display: none !important;
+}
     :root{
       --rose:#C9376E;
       --rose-2:#fce9f0;
@@ -78,7 +84,7 @@
   <header>
     <div class="container">
       <!-- Logo no topo -->
-      <img src="logo.jpg" alt="Logo O Amor Presente" class="logo">
+      <img src="logo1.png" alt="Logo O Amor Presente" class="logo">
       <span class="badge">Vivência de Casais</span>
       <h1>O Amor Presente</h1>
       <p class="subtitle"><strong>“Reconectar: A Linguagem do Amor em Movimento”</strong> — uma jornada para reconectar emoções, renovar o vínculo e despertar a verdadeira parceria.</p>
