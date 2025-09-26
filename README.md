@@ -20,23 +20,23 @@
     header {
       background:var(--rose);
       text-align:center;
-      padding:36px 24px;
+      padding:80px 24px;   /* aumentei bastante para cobrir o título azul */
       color:#fff;
       position:relative;
     }
 
     header img.logo {
-      max-height:180px; /* aumentada para cobrir escrita azul do GitHub */
+      max-height:160px;
       width:auto;
       display:block;
-      margin:0 auto 12px;
+      margin:0 auto 18px;
     }
 
     header .badge {
-      font-size:26px;
+      font-size:30px;
       font-weight:700;
       text-transform:uppercase;
-      letter-spacing:.05em;
+      letter-spacing:.06em;
     }
 
     section {padding:56px 20px;max-width:1100px;margin:0 auto}
