@@ -15,25 +15,20 @@
       --bg:#fff;
       --success:#10B981;
     }
-
-    /* Zera margens e garante que nada fique antes do header */
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}
+    html,body{margin:0;padding:0;background:var(--bg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial}
     *{box-sizing:border-box}
     a{color:var(--rose);text-decoration:none}
 
-    /* ----- HERO (faixa rosa fixa colada no topo) ----- */
+    /* ----- HERO (faixa rosa colada no topo) ----- */
     header{
-      position:fixed;        /* cola no topo e cobre o título azul do GitHub */
-      top:0; left:0; right:0;
-      z-index:999;
-      background:linear-gradient(135deg,var(--rose) 0%, #b43c7b 40%, #8c2aa0 70%);
+      background:var(--rose);  /* cor sólida rosa */
       color:#fff;
       text-align:center;
-      padding:140px 20px 80px;  /* altura generosa para cobrir qualquer coisa */
+      padding:140px 20px 80px;
     }
     header .wrap{max-width:1100px;margin:0 auto}
     header img.logo{
-      max-height:170px;      /* mais retangular, sem distorcer */
+      max-height:170px;
       width:auto;
       display:block;
       margin:0 auto 16px;
@@ -59,10 +54,8 @@
     .btn-primary{background:#fff;color:var(--rose)}
     .btn-outline{border:2px solid #fff;color:#fff}
 
-    /* empurra o conteúdo para baixo do header fixo */
-    main{padding-top:320px}
-
-    /* ----- LAYOUT BASE ----- */
+    /* ----- MAIN ----- */
+    main{padding-top:20px}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
     section{padding:56px 0;border-bottom:1px solid #f1f5f9}
     .grid{display:grid;gap:22px}
@@ -79,10 +72,7 @@
     }
     p{margin:10px 0 0;font-size:18px;color:var(--soft)}
 
-    .card{
-      background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;
-      box-shadow:0 8px 24px rgba(0,0,0,.06);
-    }
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
     .pink{background:var(--rose-2)}
     .blue{background:var(--blue-2)}
 
@@ -91,18 +81,18 @@
     .list-check li{list-style:none;padding-left:28px;position:relative}
     .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:800}
 
-    /* ----- INSTRUTORES ----- */
+    /* Instrutores */
     .mentores{text-align:center}
     .mentores img{max-width:360px;border-radius:16px;box-shadow:0 10px 26px rgba(0,0,0,.08);margin:10px auto 14px;display:block}
 
-    /* ----- PREÇOS ----- */
+    /* Preços */
     .pricing{display:grid;gap:16px}
     @media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)}}
     .price-card{text-align:center;border:1px solid #e5e7eb;border-radius:16px;padding:22px;background:#fff}
     .price{font-size:34px;font-weight:900;color:var(--rose);margin:8px 0}
     .pill{display:inline-block;background:var(--blue-2);color:var(--blue);padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px}
 
-    /* ----- DEPOIMENTOS ----- */
+    /* Depoimentos */
     .testimonials{display:grid;gap:18px}
     @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
     .t-card{border:1px solid #e5e7eb;border-radius:16px;padding:18px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
@@ -110,14 +100,14 @@
     .woman{background:var(--rose-2)}
     .man{background:var(--blue-2)}
 
-    /* ----- RODAPÉ ----- */
+    /* Rodapé */
     .footer-cta{background:var(--blue-2);border:1px solid #dbeafe;border-radius:16px;padding:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
     footer{padding:28px 0;background:var(--rose);color:#fff;font-size:14px;text-align:center}
 
-    /* ----- WHATSAPP FLUTUANTE ----- */
+    /* WhatsApp */
     .whatsapp-float{
       position:fixed;
-      right:40px;            /* “mais para a esquerda” em relação à borda */
+      right:40px;
       top:50%;
       transform:translateY(-50%);
       width:60px;height:60px;border-radius:50%;
@@ -192,50 +182,20 @@
         </div>
       </section>
 
-      <!-- Depoimentos (mulher/ homem alternando) -->
+      <!-- Depoimentos -->
       <section id="depoimentos">
         <h2>Depoimentos</h2>
         <div class="testimonials">
-          <div class="t-card woman">
-            <p class="t-name">Grasiela Nardino</p>
-            <p>Hoje percebi que devemos olhar mais para nós como casal, apoiar e ouvir a opinião do outro e sempre levar em consideração ambas as colocações, em sintonia podemos crescer e evoluir muito mais.</p>
-          </div>
-          <div class="t-card man">
-            <p class="t-name">Mateus Battistela</p>
-            <p>Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento, as linguagens do amor e a importância de saber ouvir e se apoiar.</p>
-          </div>
-          <div class="t-card woman">
-            <p class="t-name">Alini De Paris</p>
-            <p>Hoje valeu a pena porque a comunicação clara e expressiva em um relacionamento é muito importante, bem como saber respeitar o tempo e a individualidade do outro. Através da compreensão criamos um ambiente mais seguro e acolhedor, fortalecendo nossa conexão emocional.</p>
-          </div>
-          <div class="t-card man">
-            <p class="t-name">Marcelo Pissaia Novo</p>
-            <p>Hoje percebi que devemos olhar para a pessoa que está ao nosso lado com amor e respeito, devemos nos apoiar nos momentos difíceis e nunca largar a mão.</p>
-          </div>
-          <div class="t-card woman">
-            <p class="t-name">Joice</p>
-            <p>A vivência de hoje foi, mais uma vez, uma experiência única que superou as expectativas. Precisamos cuidar do nosso casamento para que possamos viver de maneira leve e feliz.</p>
-          </div>
-          <div class="t-card man">
-            <p class="t-name">Jean Camargo</p>
-            <p>Hoje percebi que devemos cultivar amor próprio primordialmente para, na sequência, ter para oferecer na relação; estar em sintonia na comunicação, escutando com amor e cultivando boas raízes.</p>
-          </div>
-          <div class="t-card woman">
-            <p class="t-name">Ivete</p>
-            <p>Hoje percebi que valeu a pena o encontro de casal para entender um ao outro, apoiar sempre, tirar as dores e cuidar das nossas raízes.</p>
-          </div>
-          <div class="t-card man">
-            <p class="t-name">Valdemar</p>
-            <p>Valeu a pena porque senti a necessidade de buscar mais apoio quando o casal está com dores.</p>
-          </div>
-          <div class="t-card woman">
-            <p class="t-name">Roselei Teles</p>
-            <p>Hoje percebi que um relacionamento saudável é baseado, em primeiro lugar, em confiança — em si mesma e no outro —, compreender as dores um do outro e respeitar o momento de cada um.</p>
-          </div>
-          <div class="t-card woman">
-            <p class="t-name">Claudete</p>
-            <p>Percebi o quanto é importante a confiança e o compartilhamento de sonhos e projetos com o parceiro. A dinâmica da condução mostrou o valor de confiar quando somos conduzidos e a responsabilidade quando estamos conduzindo.</p>
-          </div>
+          <div class="t-card woman"><p class="t-name">Grasiela Nardino</p><p>Hoje percebi que devemos olhar mais para nós como casal...</p></div>
+          <div class="t-card man"><p class="t-name">Mateus Battistela</p><p>Hoje valeu a pena porque aprendi um pouco mais sobre nosso relacionamento...</p></div>
+          <div class="t-card woman"><p class="t-name">Alini De Paris</p><p>Hoje valeu a pena porque a comunicação clara...</p></div>
+          <div class="t-card man"><p class="t-name">Marcelo Pissaia Novo</p><p>Hoje percebi que devemos olhar para a pessoa que está ao nosso lado...</p></div>
+          <div class="t-card woman"><p class="t-name">Joice</p><p>A vivência de hoje foi, mais uma vez, uma experiência única...</p></div>
+          <div class="t-card man"><p class="t-name">Jean Camargo</p><p>Hoje percebi que devemos cultivar amor próprio...</p></div>
+          <div class="t-card woman"><p class="t-name">Ivete</p><p>Hoje percebi que valeu a pena o encontro de casal...</p></div>
+          <div class="t-card man"><p class="t-name">Valdemar</p><p>Valeu a pena porque senti a necessidade de buscar mais apoio...</p></div>
+          <div class="t-card woman"><p class="t-name">Roselei Teles</p><p>Hoje percebi que um relacionamento saudável é baseado em confiança...</p></div>
+          <div class="t-card woman"><p class="t-name">Claudete</p><p>Percebi o quanto é importante a confiança e o compartilhamento...</p></div>
         </div>
       </section>
 
@@ -244,10 +204,8 @@
         <h2>Garanta sua vaga</h2>
         <p>As vagas são limitadas. Clique no botão abaixo para iniciar sua inscrição.</p>
         <div class="cta-wrap" style="justify-content:center">
-          <a class="btn btn-primary" href="#" title="Link do formulário/checkout">Quero participar</a>
-          <a class="btn" style="background:var(--blue-2);color:var(--blue)"
-             href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente"
-             target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn btn-primary" href="#">Quero participar</a>
+          <a class="btn" style="background:var(--blue-2);color:var(--blue)" href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" target="_blank" rel="noopener">Falar no WhatsApp</a>
         </div>
       </section>
 
@@ -268,9 +226,8 @@
     © O Amor Presente — Vivência de Casais. Todos os direitos reservados.
   </footer>
 
-  <!-- Botão flutuante WhatsApp (meio da página, mais para dentro) -->
-  <a class="whatsapp-float" target="_blank" rel="noopener"
-     href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente">
+  <!-- Botão WhatsApp -->
+  <a class="whatsapp-float" target="_blank" rel="noopener" href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 </body>
