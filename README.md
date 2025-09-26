@@ -24,7 +24,12 @@
       color:#fff;
     }
 
-    header img.logo {max-width:240px;margin-bottom:12px}
+    header img.logo {
+      max-height:120px; /* ajuste para logo mais retangular */
+      width:auto;
+      margin-bottom:12px;
+    }
+
     header .badge {
       font-size:26px;
       font-weight:700;
@@ -35,7 +40,7 @@
     section {padding:56px 20px;max-width:1100px;margin:0 auto}
 
     h2 {
-      font-size:32px;
+      font-size:36px;
       margin:0 0 18px;
       background: linear-gradient(90deg, var(--rose), var(--blue));
       -webkit-background-clip:text;
@@ -182,3 +187,4 @@
 
 </body>
 </html>
+
