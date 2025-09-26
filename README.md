@@ -23,35 +23,39 @@
     img{max-width:100%;display:block}
     a{text-decoration:none}
 
-    /* FORÇAR SAÍDA do título azul do GitHub Pages */
-    header .project-name,
-    header .site-title,
+    /* BLOQUEIO AGRESSIVO — esconde header padrão e títulos de tema do GitHub Pages */
+    body > header,
+    .page-header,
+    .site-header,
+    header[role="banner"],
+    .Header,
+    #header,
+    .project-name,
+    .site-title,
     h1.project-name,
     h1.site-title{
       display:none !important;
-    }
-    /* Colapsa o header padrão do tema do GitHub Pages (sem afetar a página) */
-    body > header{
-      max-height:0 !important;
-      overflow:hidden !important;
-      padding:0 !important;
+      visibility:hidden !important;
+      height:0 !important;
       margin:0 !important;
+      padding:0 !important;
       border:0 !important;
+      overflow:hidden !important;
     }
 
-    /* FAIXA ROSA DE TOPO (apenas o texto) */
+    /* FAIXA ROSA DE TOPO */
     .top-bar{
       background:var(--rose);
       color:#fff;
       text-align:center;
-      padding:18px 10px;           /* um pouco mais alta para “cobrir” melhor o topo */
+      padding:18px 10px;
       font-weight:900;
       font-size:clamp(20px,4.6vw,30px);
       letter-spacing:.04em;
       text-transform:uppercase;
     }
 
-    /* HERO COM CARTÃO BRANCO ABAIXO DA FAIXA */
+    /* HERO */
     .hero{padding:28px 20px 10px;background:#fff}
     .wrap{max-width:1100px;margin:0 auto}
     .hero-card{
@@ -226,7 +230,7 @@
           <a href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente"
              class="btn ghost" target="_blank" rel="noopener">Falar no WhatsApp</a>
 
-          <!-- Fora do WhatsApp: joga para o Google Forms (nova guia) -->
+          <!-- Fora do WhatsApp: vai para o Google Forms (nova guia) -->
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform"
              class="btn primary" target="_blank" rel="noopener">Quero participar</a>
         </div>
@@ -409,11 +413,9 @@
     <div class="wrap" style="text-align:center">
       <p style="margin:0 0 12px;color:var(--soft)">Vagas limitadas • 08h às 17h • <em>Data & Local a confirmar</em></p>
 
-      <!-- Botão principal vai para o Forms -->
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform"
          class="btn primary" target="_blank" rel="noopener">Garantir minha vaga</a>
 
-      <!-- Apoio no WhatsApp, se quiser -->
       <div style="margin-top:10px">
         <a href="https://wa.me/5549998110445?text=Enviei%20o%20formul%C3%A1rio%20da%20Viv%C3%AAncia%20O%20Amor%20Presente"
            class="btn ghost" target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -445,15 +447,15 @@
     <svg viewBox="0 0 24 24"><path d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
   </a>
 
-  <!-- JS do FAQ: abre um por vez -->
+  <!-- JS do FAQ + REMOÇÃO AGRESSIVA DO HEADER DO GITHUB -->
   <script>
     (function(){
+      // FAQ: abre um por vez
       const items = document.querySelectorAll('.faq-item');
       items.forEach((item) => {
         const btn = item.querySelector('.faq-q');
         const panel = item.querySelector('.faq-a');
         btn.addEventListener('click', () => {
-          // fecha todos os outros
           items.forEach(i => {
             if(i !== item){
               i.classList.remove('open');
@@ -463,11 +465,43 @@
               p && p.setAttribute('aria-hidden','true');
             }
           });
-          // alterna este
           const isOpen = item.classList.toggle('open');
           btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
         });
+      });
+
+      // REMOÇÃO AGRESSIVA de header/título do GitHub Pages
+      const killSelectors = [
+        'body > header',
+        '.page-header',
+        '.site-header',
+        'header[role="banner"]',
+        '.Header',
+        '#header',
+        '.project-name',
+        '.site-title',
+        'h1.project-name',
+        'h1.site-title'
+      ];
+      killSelectors.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => el && el.remove());
+      });
+
+      // Se ainda sobrar um H1 solto no topo antes da nossa faixa, remove
+      const bodyChildren = Array.from(document.body.children);
+      for(let i=0;i<bodyChildren.length;i++){
+        const el = bodyChildren[i];
+        if(el.classList && el.classList.contains('top-bar')) break;
+        if(el.tagName === 'H1') { el.remove(); break; }
+      }
+
+      // Também remove H1 com texto igual ao nome do repo (por segurança)
+      document.querySelectorAll('h1').forEach(h=>{
+        const t = (h.textContent || '').trim().toLowerCase();
+        if(t === 'o amor presente' || t === 'amor presente'){
+          h.remove();
+        }
       });
     })();
   </script>
