@@ -67,16 +67,24 @@
   .two{grid-template-columns:1fr}
   @media(min-width:860px){ .two{grid-template-columns:1fr 1fr} }
 
-  /* Títulos principais MAIORES */
+  /* Títulos (padrão) */
   h2{font-size:clamp(32px,3.8vw,46px);margin:0 0 14px;line-height:1.12}
   .section-title{font-size:clamp(34px,4.2vw,50px);text-align:center;margin:0 0 18px}
+
+  /* Títulos com degradê reforçado para “O que é?” e “Resultados” */
+  .grad-h2{
+    font-size:clamp(36px,4.6vw,54px); /* MAIOR que h2 padrão */
+    line-height:1.12; margin:0 0 12px; font-weight:900;
+    background:linear-gradient(90deg,var(--rose) 0%, var(--blue) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
 
   p{margin:8px 0 0;font-size:18px;color:var(--soft)}
   ul{margin:8px 0 0 18px;color:var(--soft);font-size:18px}
   li{margin:8px 0}
 
   .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 10px 28px rgba(31,35,48,.05)}
-  .pill{display:inline-block;background:var(--blue-10);color:#1d4ed8;padding:8px 12px;border-radius:999px;font-weight:900;font-size:13px;margin-bottom:10px}
+  .pill{display:inline-block;background:var(--blue-10);color:#1d4ed8;padding:8px 12px;border-radius:999px;font-weight:900;font-size:13px;margin-bottom:12px}
   .kicker{font-weight:900;color:var(--rose);letter-spacing:.08em;text-transform:uppercase;font-size:12px}
   .list-check li{list-style:none;padding-left:28px;position:relative}
   .list-check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--success);font-weight:900}
@@ -149,16 +157,16 @@
       <div class="divider" aria-hidden="true"></div>
 
       <div class="grid two">
-        <!-- O QUE É? (título maior) -->
+        <!-- O QUE É? (agora com degradê e maior) -->
         <div class="card">
           <span class="pill">O que é?</span>
-          <h2>Essência da vivência</h2>
+          <h2 class="grad-h2">Essência da vivência</h2>
           <p>Um encontro acolhedor, com dinâmicas simples e conversa sincera, para cuidar do que sustenta o amor: presença, respeito e verdade.</p>
         </div>
-        <!-- RESULTADOS (título maior) -->
+        <!-- RESULTADOS (agora com degradê e maior) -->
         <div class="card">
           <span class="pill">Resultados</span>
-          <h2>O que vocês levam</h2>
+          <h2 class="grad-h2">O que vocês levam</h2>
           <ul class="list-check">
             <li><strong>Reconexão emocional</strong> e leveza;</li>
             <li><strong>Comunicação respeitosa</strong> e clara;</li>
