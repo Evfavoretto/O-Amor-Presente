@@ -42,7 +42,7 @@
       padding:28px 28px 34px;margin:0 auto;max-width:980px;
       box-shadow:0 14px 34px rgba(0,0,0,.06);text-align:center
     }
-    .logo{max-height:170px;width:auto;margin:6px auto 10px} /* logo retangular sem distorcer */
+    .logo{max-height:170px;width:auto;margin:6px auto 10px}
     .lead{color:var(--soft);font-size:20px;text-align:center;max-width:820px;margin:12px auto 0}
     .divider{height:10px;margin:22px auto 22px;max-width:300px;border-radius:999px;
       background:linear-gradient(90deg,var(--rose),var(--blue))}
@@ -95,13 +95,27 @@
     .pill{display:inline-block;background:var(--blue-2);color:var(--blue);padding:6px 12px;border-radius:999px;font-weight:800;font-size:12px;margin-bottom:6px}
     .muted{color:#94a3b8}
 
-    /* DEPOIMENTOS (F/M alternado) */
+    /* DEPOIMENTOS */
     .testimonials{display:grid;gap:18px}
     @media(min-width:860px){.testimonials{grid-template-columns:1fr 1fr}}
     .t-card{border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 8px 22px rgba(0,0,0,.05)}
     .t-name{font-weight:900;margin:0 0 6px;font-size:16px}
     .woman{background:var(--rose-2);border-color:#F9C9DA}
     .man{background:var(--blue-2);border-color:#cfe7ff}
+
+    /* FAQ */
+    .faq{max-width:980px;margin:0 auto}
+    .faq-item{border:1px solid var(--line);border-radius:14px;background:#fff;margin:10px 0;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.04)}
+    .faq-q{
+      width:100%; text-align:left; background:#fff; border:0; padding:16px 18px;
+      font-size:18px; font-weight:800; color:var(--ink); cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+    }
+    .faq-q:focus{outline:3px solid var(--blue-2)}
+    .faq-q .mark{flex:0 0 auto; font-weight:900; color:var(--rose)}
+    .faq-a{max-height:0; overflow:hidden; transition:max-height .28s ease; background:#fff; border-top:1px solid var(--line)}
+    .faq-a-inner{padding:16px 18px; color:var(--soft); font-size:16px}
+    .faq-item.open .faq-a{max-height:360px} /* altura suficiente pro conteúdo comum */
+    .faq-item.open .faq-q .mark{color:var(--blue)}
 
     /* CTA FINAL + RODAPÉ */
     .footer-cta{background:var(--blue-2);border:1px solid #dbeafe;border-radius:16px;padding:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
@@ -122,10 +136,10 @@
 </head>
 <body>
 
-  <!-- FAIXA ROSA (apenas o texto) -->
+  <!-- FAIXA ROSA -->
   <div class="top-bar">Vivência de Casais</div>
 
-  <!-- HERO ABAIXO DA FAIXA -->
+  <!-- HERO -->
   <div class="hero">
     <div class="wrap">
       <div class="hero-card">
@@ -133,7 +147,7 @@
         <p class="lead"><strong>“Reconectar: A Linguagem do Amor em Movimento”.</strong></p>
         <div class="divider"></div>
 
-        <!-- O que é + Resultados (fora da faixa) -->
+        <!-- O que é + Resultados -->
         <div class="grid two">
           <div class="card pink">
             <h2 class="grad-left">O que é a vivência?</h2>
@@ -179,7 +193,7 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS (F, M, F, M, F, M, F, M, F, F) -->
+  <!-- DEPOIMENTOS -->
   <section id="depoimentos">
     <div class="wrap">
       <h2 class="section-title">Depoimentos</h2>
@@ -194,6 +208,112 @@
         <div class="t-card man"><p class="t-name">Valdemar</p><p>Senti a necessidade de buscar mais apoio quando o casal está com dores.</p></div>
         <div class="t-card woman"><p class="t-name">Roselei Teles</p><p>Um relacionamento saudável é baseado em confiança, em si mesma e no outro; compreender as dores e respeitar o momento de cada um.</p></div>
         <div class="t-card woman"><p class="t-name">Claudete</p><p>Importante a confiança e o compartilhamento de sonhos e projetos. Condução e responsabilidade caminham juntas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="faq">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Para quem é a vivência?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Precisa expor a vida do casal no grupo?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>O que acontece durante o dia?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Há pré-requisito para participar?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>O investimento é por pessoa ou por casal?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Qual é o horário e a duração?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>O que levar no dia?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Como faço para garantir a vaga?</span>
+            <span class="mark">+</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -229,5 +349,31 @@
     <svg viewBox="0 0 24 24"><path d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/></svg>
   </a>
 
+  <!-- JS do FAQ: abre um por vez -->
+  <script>
+    (function(){
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach((item) => {
+        const btn = item.querySelector('.faq-q');
+        const panel = item.querySelector('.faq-a');
+        btn.addEventListener('click', () => {
+          // fecha todos os outros
+          items.forEach(i => {
+            if(i !== item){
+              i.classList.remove('open');
+              const b = i.querySelector('.faq-q');
+              const p = i.querySelector('.faq-a');
+              b.setAttribute('aria-expanded','false');
+              p.setAttribute('aria-hidden','true');
+            }
+          });
+          // alterna este
+          const isOpen = item.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
