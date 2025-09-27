@@ -15,7 +15,6 @@
       --line:#E9EEF5;
       --bg:#FFFFFF;
       --success:#10B981;
-      --coverH:120px; /* altura da faixa fixa que cobre o título azul do GitHub */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
@@ -23,20 +22,29 @@
     img{max-width:100%;display:block}
     a{text-decoration:none}
 
-    /* FAIXA ROSA FIXA (COBRE o título azul do GitHub Pages) */
-    .top-cover{
-      position:fixed; inset:0 0 auto 0; height:var(--coverH);
-      background:var(--rose); color:#fff; z-index:9999;
-      display:flex; align-items:flex-end; justify-content:center;
-      padding:16px 10px 12px;
-      box-shadow:0 6px 20px rgba(0,0,0,.08);
-    }
-    .top-cover .title{
-      font-weight:900; letter-spacing:.04em; text-transform:uppercase;
+    /* ESCONDE o título/headers que o GitHub Pages pode renderizar */
+    header .project-name,
+    header .site-title,
+    h1.project-name,
+    h1.site-title,
+    .page-header,
+    .site-header,
+    .Header,
+    .pagehead,
+    .container-lg>h1 { display:none !important; height:0 !important; margin:0 !important; padding:0 !important; }
+
+    /* FAIXA ROSA DE TOPO (rola junto) */
+    .top-bar{
+      background:var(--rose);
+      color:#fff;
+      text-align:center;
+      padding:16px 10px 14px;
+      font-weight:900;
       font-size:clamp(20px,4.6vw,30px);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      box-shadow:0 6px 16px rgba(0,0,0,.08);
     }
-    /* compensa o conteúdo por causa da faixa fixa */
-    body{padding-top:var(--coverH)}
 
     /* HERO */
     .hero{padding:28px 20px 10px;background:#fff}
@@ -110,24 +118,12 @@
     /* É PARA VOCÊ / NÃO É PARA VOCÊ */
     .fit-grid{display:grid;gap:22px}
     @media(min-width:860px){.fit-grid{grid-template-columns:1fr 1fr}}
-    .fit-card{
-      border:1px solid var(--line);border-radius:18px;padding:22px;
-      box-shadow:0 10px 26px rgba(0,0,0,.05)
-    }
+    .fit-card{border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 10px 26px rgba(0,0,0,.05)}
     .fit-yes{background:#ECFDF5}
     .fit-no{background:#FFE4EA}
-    .fit-title{
-      margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px);
-      display:flex;gap:10px;align-items:center;color:var(--ink)
-    }
-    .fit-title .badge-yes{
-      background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0;
-      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
-    }
-    .fit-title .badge-no{
-      background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3;
-      font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase
-    }
+    .fit-title{margin:0 0 10px;font-weight:900;font-size:clamp(22px,3.2vw,28px);display:flex;gap:10px;align-items:center;color:var(--ink)}
+    .fit-title .badge-yes{background:#D1FAE5;color:#065F46;border:1px solid #A7F3D0;font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+    .fit-title .badge-no{background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3;font-weight:800;border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
     .fit-list{margin:8px 0 0 0;padding:0;list-style:none}
     .fit-list li{display:flex;gap:10px;align-items:flex-start;margin:10px 0;color:var(--ink)}
     .fit-list .icon{font-weight:900;flex:0 0 auto;margin-top:1px}
@@ -136,25 +132,12 @@
 
     /* FAQ — pergunta rosa / resposta azul */
     .faq{max-width:980px;margin:0 auto}
-    .faq-item{
-      margin:12px 0;
-      border-radius:14px;
-      overflow:hidden;
-      box-shadow:0 6px 18px rgba(0,0,0,.06);
-      border:1px solid var(--line);
-    }
-    .faq-q{
-      width:100%; text-align:left; background:var(--rose); border:0; padding:16px 18px;
-      font-size:18px; font-weight:900; color:#fff; cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center;
-    }
-    .faq-q .mark{flex:0 0 auto; font-weight:900; color:#fff}
+    .faq-item{margin:12px 0;border-radius:14px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06);border:1px solid var(--line)}
+    .faq-q{width:100%;text-align:left;background:var(--rose);border:0;padding:16px 18px;font-size:18px;font-weight:900;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-q .mark{flex:0 0 auto;font-weight:900;color:#fff}
     .faq-q:focus{outline:3px solid var(--blue-2)}
-    .faq-a{
-      max-height:0; overflow:hidden; transition:max-height .28s ease;
-      background:var(--blue); color:#fff; border-top:1px solid var(--line);
-    }
-    .faq-a-inner{padding:16px 18px; font-size:16px; line-height:1.55}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;background:var(--blue);color:#fff;border-top:1px solid var(--line)}
+    .faq-a-inner{padding:16px 18px;font-size:16px;line-height:1.55}
     .faq-item.open .faq-a{max-height:360px}
     .faq-item.open .faq-q .mark{opacity:.9}
 
@@ -177,8 +160,8 @@
 </head>
 <body>
 
-  <!-- FAIXA FIXA QUE COBRE O TÍTULO AZUL -->
-  <div class="top-cover"><div class="title">VIVÊNCIA DE CASAIS</div></div>
+  <!-- FAIXA ROSA (rola junto e esconde o título azul do GitHub que foi ocultado via CSS) -->
+  <div class="top-bar">Vivência de Casais</div>
 
   <!-- HERO -->
   <div class="hero">
@@ -216,7 +199,6 @@
         <!-- CTA primária -->
         <div class="cta">
           <a href="https://wa.me/5549998110445?text=Quero%20saber%20mais%20sobre%20a%20Viv%C3%AAncia%20O%20Amor%20Presente" class="btn ghost" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          <!-- Google Forms em nova guia -->
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform" class="btn primary" target="_blank" rel="noopener">Quero participar</a>
         </div>
       </div>
@@ -294,75 +276,43 @@
       <div class="faq">
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Para quem é a vivência?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>Para quem é a vivência?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Para casais em qualquer fase (namoro, noivado, casamento ou restauração) que desejam reconectar, comunicar melhor e fortalecer o vínculo com leveza e presença.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Precisa expor a vida do casal no grupo?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>Precisa expor a vida do casal no grupo?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Não. O encontro é conduzido com acolhimento e segurança. Há momentos individuais e em dupla, e você escolhe o que deseja compartilhar.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O que acontece durante o dia?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>O que acontece durante o dia?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Dinâmicas em casal, reflexões guiadas, exercícios práticos de comunicação e experiências inspiradas em princípios sistêmicos para ressignificar histórias e pactos.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Há pré-requisito para participar?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>Há pré-requisito para participar?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Apenas a presença dos dois e abertura para a experiência. Não é necessário conhecimento prévio em constelação ou outras abordagens.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O investimento é por pessoa ou por casal?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>O investimento é por pessoa ou por casal?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">O valor informado na página é por casal. Os lotes variam conforme a disponibilidade de vagas.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Qual é o horário e a duração?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>Qual é o horário e a duração?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Um dia inteiro de imersão, das 08h00 às 17h00. Data e local serão confirmados diretamente no WhatsApp após o cadastro.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>O que levar no dia?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>O que levar no dia?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Roupas confortáveis, água, e um caderno para anotações. O essencial é a disponibilidade para viver a experiência em presença.</div></div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            <span>Como faço para garantir a vaga?</span><span class="mark">+</span>
-          </button>
-          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">
-            Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.
-          </div></div>
+          <button class="faq-q" aria-expanded="false"><span>Como faço para garantir a vaga?</span><span class="mark">+</span></button>
+          <div class="faq-a" aria-hidden="true"><div class="faq-a-inner">Clique em “Quero participar” ou fale conosco no WhatsApp. Enviaremos o link de inscrição e as instruções de pagamento conforme o lote vigente.</div></div>
         </div>
 
       </div>
@@ -385,7 +335,6 @@
           <div style="font-weight:800;color:var(--rose);letter-spacing:.06em;text-transform:uppercase;font-size:12px">Pronto para reconectar?</div>
           <h3 style="margin:6px 0 0;font-size:22px;color:var(--ink)">Um dia para lembrar, sentir e escolher novamente o amor.</h3>
         </div>
-        <!-- Google Forms em nova guia -->
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7wsV5YQcTsjH9x3CSAVRu13jba3_sSbD39dFqQgxWprBqXQ/viewform" class="btn primary" target="_blank" rel="noopener">Inscrever-se agora</a>
       </div>
     </div>
